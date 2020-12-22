@@ -1,0 +1,26 @@
+.total-bg {
+  background-color: var(--color-primary);
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: Staatliches-Regular;
+}
+
+.name-brand h1 {
+  color: var(--color-red);
+}
+
+.name-brand h5 {
+  margin-top: -1.2rem;
+  color: var(--color-blue);
+  border-top: 1px solid var(--color-red);
+  font-size: 1.25rem;
+}
+
+.actionBtn {
+  background-color: rgba(122, 122, 122, 0.14);
+  position: absolute;
+  padding: 12px 10px;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
