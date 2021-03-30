@@ -95,6 +95,20 @@ const Input = (props) => {
       />
     );
   }
+  if (props.element === "phonenumber") {
+    element = (
+      <span
+        id={props.id}
+        type={props.type}
+        onBlur={touchHandler}
+        onChange={changeHandler}
+        value={props.value}
+      >
+        {" "}
+        {props.theComponent}{" "}
+      </span>
+    );
+  }
   return (
     <div
       className={`form-control ${

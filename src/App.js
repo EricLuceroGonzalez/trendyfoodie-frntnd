@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Landing from "./components/Landing";
-
+import FooterCompo from "./components/Footer";
 function App() {
   return (
     <div className="App">
@@ -13,6 +13,9 @@ function App() {
       <main>
         <Landing />
       </main>
+      <footer>
+        <FooterCompo/>
+      </footer>
     </div>
   );
 }
