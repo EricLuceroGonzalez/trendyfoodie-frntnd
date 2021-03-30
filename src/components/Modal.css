@@ -23,7 +23,7 @@
     /* background: var(--color-blue); */
     color: var(--color-secondary);
     font-size: 1.75rem;
-    font-family: LibreBarcode-Regular;
+    /* font-family: LibreBarcode-Regular; */
 }
 
 .modal__closer {

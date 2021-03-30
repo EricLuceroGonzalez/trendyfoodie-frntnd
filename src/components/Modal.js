@@ -12,7 +12,13 @@ const ModalOverlay = (props) => {
       <header
         className={`modal__header ${props.headerClass} d-flex justify-content-between`}
       >
-        <div>{props.header}</div>
+        <div>
+          <img
+            style={{ maxWidth: "140px" }}
+            className="mt-3"
+            src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
+          />
+        </div>
         <div
           className="modal__closer"
           onClick={() => {
