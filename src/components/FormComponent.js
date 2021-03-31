@@ -10,8 +10,10 @@ import {
 import PhoneInputs from "./PhoneInput";
 import Button from "../UIElements/Button";
 import { useHttpClient } from "../hooks/http-hook";
+import { useHistory } from "react-router-dom";
 
 const FormCompo = (props) => {
+  const history = useHistory();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [hasValue, setHasValue] = useState(false);
   const [ipValue, setIpValue] = useState("");
@@ -22,7 +24,6 @@ const FormCompo = (props) => {
     {
       name: { value: "", isValid: false },
       email: { value: "", isValid: false },
-      phone: { value: "", isValid: false },
     },
     false
   );
@@ -86,47 +87,37 @@ const FormCompo = (props) => {
   }, [hasValue, props.isOpen]);
 
   const sendData = async () => {
-    const data = {
-      name: formState.inputs.name.value,
-      email: formState.inputs.email.value,
-      phone: formState.inputs.phone.value,
-      IPv4: ipValue.IPv4,
-      country: ipValue.country_name,
-      city: ipValue.city,
-      state: ipValue.state,
-      lat: ipValue.latitude,
-      lon: ipValue.longitude,
-      windowW: size[0],
-      windowH: size[1],
-    };
-    console.log(data);
-    
-    try {
-      await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/form/send`,
-        "POST",
-        JSON.stringify(data),
-        { "Content-Type": "application/json" }
-      );
-      props.openCloseModal()
-    } catch (err) {
-      console.log(err);
-      
-    }
+    console.log('send');
+          history.push('/thanks')
+    // const data = {
+    //   name: formState.inputs.name.value,
+    //   email: formState.inputs.email.value,
+    //   IPv4: ipValue.IPv4,
+    //   country: ipValue.country_name,
+    //   city: ipValue.city,
+    //   state: ipValue.state,
+    //   lat: ipValue.latitude,
+    //   lon: ipValue.longitude,
+    //   windowW: size[0],
+    //   windowH: size[1],
+    // };
+    // console.log(data);
+
+    // try {
+    //   await sendRequest(
+    //     `${process.env.REACT_APP_BACKEND_URL}/form/send`,
+    //     "POST",
+    //     JSON.stringify(data),
+    //     { "Content-Type": "application/json" }
+    //   );
+    //   props.openCloseModal();
+    //   // history.push('/thanks')
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
   return (
     <React.Fragment>
-      <div
-        style={{
-          color: "var(--color-blue)",
-          position: "absolute",
-          top: "18px",
-          right: "3px",
-        }}
-      >
-        {size[0]},{size[1]}
-      </div>
-
       <Modal
         show={props.showModal}
         closeModal={() => props.openCloseModal()}
@@ -134,23 +125,15 @@ const FormCompo = (props) => {
         //   products={props.products}
         onClear={props.errorHandler}
         header={"DANNY DURAN"}
-        footer={
-          <Button onClick={() => sendData()}>
-            {" "}
-            ENVIAR{" "}
-            <span alt="Music Note" aria-label="music">
-              🎵
-            </span>
-          </Button>
-        }
+        footer={<Button onClick={() => sendData()}> ENVIAR </Button>}
       >
         <Input
           element="input"
           id="name"
           type="text"
           label="Nombre"
-          validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(2)]}
-          errorText="Please enter a name"
+          validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(3)]}
+          errorText="Introduce un nombre"
           onInput={inputHandler}
         />
         <Input
@@ -159,10 +142,10 @@ const FormCompo = (props) => {
           type="text"
           label="Correo"
           validators={[VALIDATOR_EMAIL(), VALIDATOR_REQUIRE()]}
-          errorText="Please enter a name"
+          errorText="Introduce un correo válido"
           onInput={inputHandler}
         />
-        <Input
+        {/* <Input
           id="phone"
           type="text"
           element="phonenumber"
@@ -180,9 +163,8 @@ const FormCompo = (props) => {
               //  || ls.get("phone")}
               onChange={(e) => setPhone(e)}
               // initialValue={ls.get('phone')}
-            ></PhoneInputs>
-          }
-        />
+            ></PhoneInputs> */}
+        } />
       </Modal>
     </React.Fragment>
   );

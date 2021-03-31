@@ -20,16 +20,19 @@ const Landing = () => {
     <React.Fragment>
       <div className="total-bg">
         <div className="name-brand col-12 mr-auto ml-auto">
-          <img 
-          className='mt-3'
-          src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png" />
+          <img
+            className="mt-3"
+            src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
+          />
         </div>
-        <div style={{ position: "absolute", top: "3px", right: "3px" }}>
-          {opened}
+        <div className='landing-text col-8'>
+          <p className='text-1'>Tengo una sorpresa para ti</p>
+          <p className='text-2'>Suscríbete y descubre a mi contenido exclusivo </p>
+          <p className='text-3'>
+          <span role="img" aria-label="sheep">😈</span>+Música+Fotos+Videos
+          <span role="img" aria-label="sheep">😈</span></p>
+          
         </div>
-        {/* <div>
-          <BackgroundImage />
-        </div> */}
         <div className="actionBtn col-12">
           <Button
             onClick={() => {
@@ -37,7 +40,7 @@ const Landing = () => {
               openCloseModal();
             }}
           >
-            Action Button
+            Suscríbete gratis
           </Button>
         </div>
         <div>

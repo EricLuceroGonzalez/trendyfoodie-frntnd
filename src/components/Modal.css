@@ -19,10 +19,10 @@
 
 .modal__header {
     width: 100%;
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 1.5rem;
     /* background: var(--color-blue); */
     color: var(--color-secondary);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     /* font-family: LibreBarcode-Regular; */
 }
 
@@ -46,6 +46,7 @@
     margin-top: 5px;
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
+    /* border: 1px solid red; */
 }
 
 @media (min-width: 768px) {
