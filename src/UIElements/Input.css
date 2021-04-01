@@ -14,10 +14,12 @@
 
 .form-control label {
     background-color: none;
-    font-weight: bold;
-    font-size: 1.13rem;
     margin-bottom: 0.15rem;
     color: var(--color-secondary);
+    font-size: 1.5rem;
+    font-family: Changa;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px black;
 }
 
 .form-control input,
@@ -28,8 +30,10 @@
     border-radius: 12px;
     background-color: inherit;
     padding: 0.5rem 0.35rem;
-    color: var(--color-secondary);
+    color: var(--color-hover);
     font-size: 1.33rem;
+    font-family: Changa;
+    font-weight: 900;
 }
 
 .form-control input:focus,
@@ -38,6 +42,15 @@
     background: inherit;
     border: 2px solid var(--color-hover);
     color: var(--color-secondary);
+}
+
+@media only screen and (max-width: 767px) {
+    .form-control input,
+    .form-control textarea {
+        font-size: 0.85rem;
+        font-family: Changa;
+        font-weight: 900;
+    }
 }
 
 .form-control--invalid label,

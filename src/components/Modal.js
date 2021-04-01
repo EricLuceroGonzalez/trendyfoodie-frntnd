@@ -14,8 +14,9 @@ const ModalOverlay = (props) => {
       >
         <div>
           <img
-            style={{ maxWidth: "140px" }}
-            className="mt-3"
+            style={{ maxWidth: "170px" }}
+            alt='Danny Duran logo'
+            className="mt-3 image-model"
             src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
           />
         </div>

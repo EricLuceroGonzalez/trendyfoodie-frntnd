@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Landing from "./components/Landing";
-import FooterCompo from "./components/Footer";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import ThanksComnpo from "./components/ThanksComponent";
 function App() {
