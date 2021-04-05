@@ -58,12 +58,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 50%;
     font-weight: bolder;
     color: white;
     background: rgb(0, 0, 0);
-    background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-    background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-    background: radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+    background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
+    background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
+    background: radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
     /* border: 1px solid red; */
     padding: 3em 3em;
@@ -91,9 +92,9 @@
         font-weight: bolder;
         color: white;
         background: rgb(0, 0, 0);
-        background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-        background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-        background: radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+        background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
+        background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
+        background: radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
         filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
         /* border: 1px solid red; */
         padding: 2em 0.25em;

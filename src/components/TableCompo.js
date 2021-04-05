@@ -3,12 +3,13 @@ import moment from "moment";
 import { useTable } from "react-table";
 import { CSVLink } from "react-csv";
 import { useHttpClient } from "../hooks/http-hook";
-import './TableStyle.css'
+import "./TableStyle.css";
 import TimeClock from "./TimeClock";
+import LoadingSpinner from "../UIElements/LoadingSpinner";
 
 const TableCompo = () => {
   const [datas, setData] = useState([]);
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { isLoading, sendRequest } = useHttpClient();
 
   const headers = [
     { label: "Nombre", key: "name" },
@@ -28,12 +29,9 @@ const TableCompo = () => {
           headers={headers}
           separator={","}
           target="_blank"
-          className='downloadBtn'
+          className="downloadBtn"
         >
-            Descargar{" "}
-            <span role="img" aria-label="memo">
-              📝
-            </span>
+          Descargar
         </CSVLink>
       </div>
     );
@@ -89,7 +87,8 @@ const TableCompo = () => {
   return (
     <div>
       <TimeClock />
-      <table className="table table-bordered mt-2 col-lg-6 col-md-8 col-10 ml-auto mr-auto table-sm mb-5">
+      {isLoading && <LoadingSpinner asOverlay/>}
+      <table className="theTable table table-bordered mt-2 col-lg-6 col-md-8 col-12 ml-auto mr-auto table-sm mb-5">
         <thead>
           <tr
             style={{

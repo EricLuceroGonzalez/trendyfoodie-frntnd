@@ -14,12 +14,12 @@ import LoadingSpinner from "../UIElements/LoadingSpinner";
 
 const FormCompo = (props) => {
   const history = useHistory();
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { isLoading, sendRequest } = useHttpClient();
   const [hasValue, setHasValue] = useState(false);
   const [ipValue, setIpValue] = useState("");
   const [size, setSize] = useState([0, 0]);
   // Initialize state with form-hook
-  const [formState, inputHandler, setFormData] = useForm(
+  const [formState, inputHandler] = useForm(
     {
       name: { value: "", isValid: false },
       email: { value: "", isValid: false },
@@ -56,17 +56,17 @@ const FormCompo = (props) => {
       }
     };
     // To call backend
-    const callVisit = async () => {
-      try {
-        await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/visit/visitAdd`,
-          "POST",
-          JSON.stringify({ ipValue }),
-          { "Content-Type": "application/json" }
-        );
-      } catch (err) {
-      }
-    };
+    // const callVisit = async () => {
+    //   try {
+    //     await sendRequest(
+    //       `${process.env.REACT_APP_BACKEND_URL}/visit/visitAdd`,
+    //       "POST",
+    //       JSON.stringify({ ipValue }),
+    //       { "Content-Type": "application/json" }
+    //     );
+    //   } catch (err) {
+    //   }
+    // };
 
     if (!hasValue) {
       getIPAddress();
