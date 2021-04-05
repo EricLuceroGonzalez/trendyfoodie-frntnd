@@ -33,11 +33,12 @@ const ThanksComnpo = () => {
           overflow: "hidden"
         }}
       > */}
-      <div className="embed-responsive embed-responsive-16by9 col-lg-8 col-md-10 col-10 mt-5 mr-auto ml-auto">
+      <div className="embed-responsive embed-responsive-16by9 col-xl-7 col-lg-8 col-md-10 col-10 mt-5 mr-auto ml-auto">
         <iframe
         title='Danny Duran Youtube video'
           className="embed-responsive-item"
-          src="https://www.youtube.com/embed/jSxPRIBMaKk?autoplay=1"
+          src='https://res.cloudinary.com/dcvnw6hvt/video/upload/v1617593411/danny/untitled_ixqzvf.mp4'
+          // src="https://www.youtube.com/embed/jSxPRIBMaKk?autoplay=1"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

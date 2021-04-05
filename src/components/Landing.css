@@ -2,7 +2,8 @@
     background-color: var(--color-primary);
     height: 100vh;
     /* overflow-y: hidden; */
-    background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_02_z2lqsj.jpg);
+    background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617593011/danny/IMG_8631_06_cl2ooy.jpg);
+    /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_02_z2lqsj.jpg); */
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,7 +22,8 @@
     .total-bg {
         /* The file size of this background image is 93% smaller
   to improve page load speed on mobile internet connections */
-        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_gimhzd.jpg);
+        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617593010/danny/IMG_8631_01_zajguk.jpg);
+        /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_gimhzd.jpg); */
     }
     .name-brand img {
         /* border: 1px solid red; */
@@ -59,9 +61,9 @@
     font-weight: bolder;
     color: white;
     background: rgb(0, 0, 0);
-    background: -moz-radial-gradient(circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-    background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+    background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+    background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+    background: radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
     /* border: 1px solid red; */
     padding: 3em 3em;
@@ -89,9 +91,9 @@
         font-weight: bolder;
         color: white;
         background: rgb(0, 0, 0);
-        background: -moz-radial-gradient(circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-        background: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
-        background: radial-gradient(circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+        background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+        background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
+        background: radial-gradient( circle, rgba(0, 0, 0, 0.9163866230085784) 3%, rgba(255, 255, 255, 0) 75%);
         filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
         /* border: 1px solid red; */
         padding: 2em 0.25em;
@@ -108,13 +110,13 @@
 }
 
 .fade-in-left {
-    -webkit-animation: fade-in-left 0.46s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in-left 0.46s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in-left 0.46s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in-left 0.46s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .fade-in-right {
-    -webkit-animation: fade-in-right 0.96s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in-right 0.96s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in-right 0.96s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in-right 0.96s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @-webkit-keyframes fade-in-left {

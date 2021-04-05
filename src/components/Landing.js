@@ -27,18 +27,18 @@ const Landing = () => {
             />
           )}
         </div>
-        <div className="landing-text col-8">
+        <div className="landing-text col-10">
           <p className="text-1">Tengo una sorpresa para ti</p>
           <p className="text-2">
             Suscríbete y descubre a mi contenido exclusivo{" "}
           </p>
           <p className="text-3">
             <span role="img" aria-label="sheep">
-              😈
+            🐯
             </span>
             +Música+Fotos+Videos
             <span role="img" aria-label="sheep">
-              😈
+            🐯
             </span>
           </p>
         </div>

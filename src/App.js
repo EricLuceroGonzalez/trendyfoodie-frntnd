@@ -3,12 +3,14 @@ import "./App.css";
 import Landing from "./components/Landing";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import ThanksComnpo from "./components/ThanksComponent";
+import TableCompo from "./components/TableCompo";
 function App() {
   let routes;
   routes = (
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route path="/thanks" component={ThanksComnpo} />
+      <Route path='/data' component={TableCompo}/>
     </Switch>
   );
   return (
