@@ -37,10 +37,10 @@ const FormCompo = (props) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  useEffect(() => {
-    console.log(`props.isOpen: ${props.isOpen}`);
-    console.log(`formState.isValid: ${formState.isValid}`);
-  }, [props, formState]);
+  // useEffect(() => {
+  //   console.log(`props.isOpen: ${props.isOpen}`);
+  //   console.log(`formState.isValid: ${formState.isValid}`);
+  // }, [props, formState]);
 
   useEffect(() => {
     // get IP
@@ -52,13 +52,11 @@ const FormCompo = (props) => {
         setIpValue(ipValues);
         setHasValue(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     // To call backend
     const callVisit = async () => {
-      console.log("here in callVisit()");
-
       try {
         await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/visit/visitAdd`,
@@ -67,13 +65,10 @@ const FormCompo = (props) => {
           { "Content-Type": "application/json" }
         );
       } catch (err) {
-        console.log(err);
       }
     };
 
     if (!hasValue) {
-      console.log(ipValue);
-
       getIPAddress();
     }
     if (hasValue && props.isOpen === "opened") {
@@ -86,8 +81,6 @@ const FormCompo = (props) => {
   }, [hasValue, props.isOpen, ipValue, sendRequest]);
 
   const sendData = async () => {
-    console.log("send");
-    // history.push("/thanks");
     const data = {
       name: formState.inputs.name.value,
       email: formState.inputs.email.value,
@@ -98,8 +91,6 @@ const FormCompo = (props) => {
       windowW: size[0],
       windowH: size[1],
     };
-    console.log(data);
-
     try {
       await sendRequest(
         `${process.env.REACT_APP_BACKEND_URL}/form/send`,
@@ -110,7 +101,6 @@ const FormCompo = (props) => {
       props.openCloseModal();
       history.push('/thanks')
     } catch (err) {
-      console.log(err);
     }
   };
   return (

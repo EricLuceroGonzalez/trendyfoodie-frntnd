@@ -45,7 +45,7 @@ const TableCompo = () => {
           `${process.env.REACT_APP_BACKEND_URL}/form/getPeople`
         );
         setData(data.data);
-        console.log(data.data);
+        // console.log(data.data);
       } catch (err) {}
     };
     getData();

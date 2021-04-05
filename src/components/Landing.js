@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./Landing.css";
 import Button from "../UIElements/Button";
 import FormCompo from "./FormComponent";
+// const FormCompo = React.lazy(() => {
+// import("./FormComponent");
+// });
 
 const Landing = () => {
   const [showModal, setShowModal] = useState(false);
@@ -22,7 +25,7 @@ const Landing = () => {
           {!showModal && (
             <img
               className="mt-3 fade-in-left"
-              alt='Danny Duran on a bike'
+              alt="Danny Duran on a bike"
               src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
             />
           )}
@@ -34,11 +37,11 @@ const Landing = () => {
           </p>
           <p className="text-3">
             <span role="img" aria-label="sheep">
-            🐯
+              🐯
             </span>
             +Música+Fotos+Videos
             <span role="img" aria-label="sheep">
-            🐯
+              🐯
             </span>
           </p>
         </div>
