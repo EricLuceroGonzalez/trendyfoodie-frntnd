@@ -6,10 +6,10 @@
     background: var(--color-hover);
     color: var(--color-primary);
     cursor: pointer;
-    margin-right: 1rem;
+    margin: 1rem 1rem 1rem auto;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-family: Changa;
     font-weight: 900;
     text-shadow: 2px 2px 5px black;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import moment from "moment";
 import { useTable } from "react-table";
 import { CSVLink } from "react-csv";
@@ -6,8 +6,10 @@ import { useHttpClient } from "../hooks/http-hook";
 import "./TableStyle.css";
 import TimeClock from "./TimeClock";
 import LoadingSpinner from "../UIElements/LoadingSpinner";
+import { AuthContext } from "../utils/auth-context";
 
 const TableCompo = () => {
+  const auth = useContext(AuthContext);
   const [datas, setData] = useState([]);
   const { isLoading, sendRequest } = useHttpClient();
 
@@ -87,7 +89,7 @@ const TableCompo = () => {
   return (
     <div>
       <TimeClock />
-      {isLoading && <LoadingSpinner asOverlay/>}
+      {isLoading && <LoadingSpinner asOverlay />}
       <table className="theTable table table-bordered mt-2 col-lg-6 col-md-8 col-12 ml-auto mr-auto table-sm mb-5">
         <thead>
           <tr
@@ -109,6 +111,12 @@ const TableCompo = () => {
         <tbody>{renderRoll()}</tbody>
       </table>
       {renderCSV()}
+      <div className="col-6 downloadBtnRight">
+        {" "}
+        <div onClick={() => auth.logout()} size={"small"}>
+          Salir
+        </div>
+      </div>
     </div>
   );
 };

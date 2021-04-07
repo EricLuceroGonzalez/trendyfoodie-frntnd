@@ -2,48 +2,68 @@ import React, { Suspense } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Landing from "./components/Landing";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
 import LoadingSpinner from "./UIElements/LoadingSpinner";
+import { AuthContext } from "./utils/auth-context";
+import { useAuth } from "./hooks/auth-hook";
+import Auth from "./components/Auth";
 // import ThanksComponent from "./components/ThanksComponent";
 // import TableCompo from "./components/TableCompo";
 
-const TableCompo = React.lazy(() => 
-  import("./components/TableCompo")
-);
-const ThanksComponent = React.lazy(() => 
-  import('./components/ThanksComponent')
+const TableCompo = React.lazy(() => import("./components/TableCompo"));
+const ThanksComponent = React.lazy(() =>
+  import("./components/ThanksComponent")
 );
 function App() {
+  const { userName, userId, token, login, logout } = useAuth();
   let routes;
-  routes = (
-    <Switch>
-      <Route exact path="/" component={Landing} />
-      <Route exact path="/thanks" component={ThanksComponent} />
-      <Route path="/privateDataAccess" component={TableCompo} />
-    </Switch>
-  );
+  if (token) {
+    routes = (
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/thanks" component={ThanksComponent} />
+        <Route path="/privateDataAccess" component={TableCompo} />
+        <Route exact path="/login" component={Auth} />
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/thanks" component={ThanksComponent} />
+        <Route exact path="/login" component={Auth} />
+        <Redirect to="/"></Redirect>
+      </Switch>
+    );
+  }
+
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <p>
-          This is the <code>Header</code>.
-        </p>
-      </header> */}
+    <AuthContext.Provider
+      value={{
+        isLoggedIn: !!token,
+        userName: userName,
+        userId: userId,
+        token: token,
+        login: login,
+        logout: logout,
+      }}
+    >
       <Router>
-        <main>
+        <div className="App">
+          <main>
             <Suspense
-                          fallback={
-                            <div className="center">
-                              <LoadingSpinner />
-                            </div>}>
-            {routes}
+              fallback={
+                <div className="center">
+                  <LoadingSpinner />
+                </div>
+              }
+            >
+              {routes}
             </Suspense>
-        </main>
-        {/* <footer>
-        <FooterCompo/>
-      </footer> */}
+          </main>
+        </div>
       </Router>
-    </div>
+    </AuthContext.Provider>
   );
 }
 

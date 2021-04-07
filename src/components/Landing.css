@@ -46,6 +46,7 @@
 
 .actionBtn {
     position: absolute;
+    margin: 1px auto;
     padding: 12px 10px;
     top: 82%;
     left: 50%;
