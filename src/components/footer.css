@@ -2,20 +2,20 @@
     background-color: var(--color-hover);
     border: none;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     font-size: 2.5em;
     color: var(--color-white);
-    -webkit-animation: fade-this-in 2.2s;
-    animation: fade-this-in 2.2s;
+    /* -webkit-animation: fade-this-in 2.2s; */
+    /* animation: fade-this-in 2.2s; */
 }
 
 @media only screen and (max-width: 767px) {
     .footer-box {
         font-size: 1.3em;
         color: var(--color-white);
-        -webkit-animation: fade-this-in 2.2s;
-        animation: fade-this-in 2.2s;
+        -webkit-animation: fade-this-in 1.25s;
+        animation: fade-this-in 1.25s;
     }
 }
 

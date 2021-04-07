@@ -1,8 +1,8 @@
 .thanks-bg {
     color: red;
     background-color: var(--color-primary);
-    height: 100vh;
-    overflow-y: hidden;
+    height: 99vh;
+    overflow: hidden;
     background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8633_01_hwgoch.jpg);
     background-position: center center;
     background-repeat: no-repeat;
