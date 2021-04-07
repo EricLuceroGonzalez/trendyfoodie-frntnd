@@ -4,7 +4,7 @@ import FooterCompo from "./Footer";
 
 const ThanksComnpo = () => {
   return (
-    <div className="thanks-bg">
+    <div className="thanks-bg content">
       <div className="name-brand col-12 mr-auto ml-auto fade-in-left">
         <img 
           className="mt-3"
@@ -33,7 +33,7 @@ const ThanksComnpo = () => {
           overflow: "hidden"
         }}
       > */}
-      <div className="embed-responsive embed-responsive-16by9 col-xl-7 col-lg-8 col-md-10 col-10 mt-5 mr-auto ml-auto">
+      <div className="embed-responsive embed-responsive-16by9 col-xl-7 col-lg-8 col-md-10 col-10 mt-2 mr-auto ml-auto">
         <iframe
         title='Danny Duran Youtube video'
           className="embed-responsive-item"
