@@ -1,8 +1,8 @@
 .footer-box {
-    background-color: var(--color-hover);
+    /* background-color: var(--color-pink); */
     border: none;
     position: absolute;
-    bottom: 0;
+    bottom: 6px;
     width: 100%;
     height: 35px;
     font-size: 1.75em;

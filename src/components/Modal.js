@@ -8,7 +8,7 @@ import "./Modal.css";
 // Two components on this file (for internal use):
 const ModalOverlay = (props) => {
   const content = (
-    <div className={`mymodal ${props.className}`} style={props.style}>
+    <div className={`text-focus-in mymodal ${props.className}`} style={props.style}>
       <header
         className={`modal__header ${props.headerClass} d-flex justify-content-between`}
       >

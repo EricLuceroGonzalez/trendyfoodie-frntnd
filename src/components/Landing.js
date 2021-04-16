@@ -21,29 +21,32 @@ const Landing = () => {
   return (
     <React.Fragment>
       <div className="total-bg">
-        <div className="name-brand col-12 mr-auto ml-auto">
+        <div className="landing-container">
+          <div className="name-brand col-12 mr-auto ml-auto">
+            {!showModal && (
+              <img
+                className="mt-3 fade-in-left"
+                alt="Danny Duran on a bike"
+                src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
+              />
+            )}
+          </div>
+          <div className="mt-5 col-12"></div>
+          <div className="mt-5 col-12"></div>
           {!showModal && (
-            <img
-              className="mt-3 fade-in-left"
-              alt="Danny Duran on a bike"
-              src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
-            />
+          <div className="landing-text mt-5 col-12 fade-in-right">
+            <span className="text-1">Tengo una </span>
+            <span className="text-2">sorpresa para ti</span>
+            <span className="text-3">Suscríbete y descúbrela</span>
+          </div>
           )}
-        </div>
-        <div className="landing-text col-10">
-          <p className="text-1">Tengo una sorpresa para ti</p>
-          <p className="text-2">
-            Suscríbete y descubre a mi contenido exclusivo{" "}
-          </p>
-          <p className="text-3">
-            <span role="img" aria-label="sheep">
-              🐯
-            </span>
-            +Música+Fotos+Videos
-            <span role="img" aria-label="sheep">
-              🐯
-            </span>
-          </p>
+          <div className="cover mt-3 col-12">
+            <img
+              className=" fade-in-right"
+              alt="Danny Duran and Alkilados making music"
+              src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618553166/danny/danny-duran-front500x500_psnfxd.jpg"
+            />
+          </div>
         </div>
         {!showModal && (
           <div className="actionBtn col-12">
@@ -53,7 +56,10 @@ const Landing = () => {
                 openCloseModal();
               }}
             >
-              Suscríbete gratis
+              <span role="img" aria-label="tiger emoji">
+                🐯{" "}
+              </span>
+              Suscríbete
             </Button>
           </div>
         )}{" "}

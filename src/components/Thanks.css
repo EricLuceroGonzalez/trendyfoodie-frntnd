@@ -1,5 +1,4 @@
 .thanks-bg {
-    color: red;
     background-color: var(--color-primary);
     height: 100vh;
     overflow: hidden;
@@ -10,11 +9,21 @@
     background-size: cover;
 }
 
+.thanks-msg {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 65px;
+    font-size: 1.95em;
+}
+
 @media only screen and (max-width: 767px) {
     .thanks-bg {
         /* The file size of this background image is 93% smaller
   to improve page load speed on mobile internet connections */
-        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8633_01_hwgoch.jpg);
+        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618549432/danny/imagen_heavy_arjlvu.jpg);
+        /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8633_01_hwgoch.jpg); */
     }
     .name-brand img {
         /* border: 1px solid red; */
@@ -23,18 +32,27 @@
         max-width: 180px;
         /* right: 3px; */
     }
+    .thanks-msg {
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 65px;
+        font-size: 0.99em;
+    }
 }
 
 .video-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 13em;
+    /* position: fixed; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
 }
 
 .fade-in-left {
-    -webkit-animation: fade-in-left 0.146s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in-left 0.146s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in-left 0.146s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in-left 0.146s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @-webkit-keyframes fade-in-left {

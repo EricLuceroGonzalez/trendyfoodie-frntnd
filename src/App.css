@@ -7,13 +7,23 @@ body {
 }
 
 
-/* use viewport-relative units to cover page fully */
+/* FUENTES: */
+
+
+/* Train One */
+
+
+/* Big Shoulders Inline Text */
+
+
+/* Bungee Outline */
 
 body {
     /* height: 100vh; */
     /* width: 100vw; */
     display: flex;
     flex-direction: column;
+    font-family: "Train One";
 }
 
 .content {
@@ -65,12 +75,19 @@ body {
     --color-secondary: #ffffff;
     --color-white: #ffffff;
     /* --color-text: ; */
-    --color-hover: #1db954;
+    --color-pink: #ff05c9;
     --color-login: #acacac;
     --color-red: #eb3947;
     /* --color-blue: #0487d9; */
 }
 
+@font-face {
+    font-family: "Train One";
+    src: url(./assets/TrainOne-Regular.ttf);
+}
+
+
+/* 
 @font-face {
     font-family: LibreBarcode-Regular;
     src: url(./assets/LibreBarcode39Text-Regular.ttf);
@@ -85,4 +102,4 @@ body {
     font-family: Changa;
     src: local("Changa"), url(./assets/Changa.ttf) format(truetype);
     font-weight: normal;
-}
+} */

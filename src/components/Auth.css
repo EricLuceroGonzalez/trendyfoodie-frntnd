@@ -2,7 +2,7 @@
     color: #000000;
     font-family: Changa;
     font-weight: bolder;
-    border-bottom: 3px solid var(--color-hover);
+    border-bottom: 3px solid var(--color-pink);
     font-size: 1.25rem;
     margin: 1px auto;
 }

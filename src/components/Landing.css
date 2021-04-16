@@ -10,6 +10,12 @@
     background-size: cover;
 }
 
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    /* or inline-flex */
+}
+
 .name-brand img {
     /* border: 1px solid red; */
     /* position: "absolute"; */
@@ -18,11 +24,15 @@
     /* right: 3px; */
 }
 
+.cover img {
+    max-width: 265px;
+}
+
 @media only screen and (max-width: 767px) {
     .total-bg {
         /* The file size of this background image is 93% smaller
   to improve page load speed on mobile internet connections */
-        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617593010/danny/IMG_8631_01_zajguk.jpg);
+        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618549156/danny/imagen_light_hitshd.jpg);
         /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_gimhzd.jpg); */
     }
     .name-brand img {
@@ -31,6 +41,9 @@
         /* top: 233px; */
         max-width: 180px;
         /* right: 3px; */
+    }
+    .cover img {
+        max-width: 165px;
     }
 }
 
@@ -54,60 +67,38 @@
 }
 
 .landing-text {
-    /* position: absolute; */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
+    /* position: fixed; */
+    /* top: 100px; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    display: flex;
+    flex-direction: column;
     font-weight: bolder;
     color: white;
-    background: rgb(0, 0, 0);
-    background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
-    background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
-    background: radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
-    /* border: 1px solid red; */
-    padding: 3em 3em;
+    text-transform: uppercase;
 }
 
 .landing-text .text-1 {
-    font-size: 1.35em;
+    font-size: 2.15em;
 }
 
 .landing-text .text-2 {
-    font-size: 2.2em;
+    font-size: 2.35em;
 }
 
 .landing-text .text-3 {
-    font-size: 1.85em;
+    font-size: 2.45em;
 }
 
 @media only screen and (max-width: 767px) {
-    .landing-text {
-        /* position: absolute; */
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-weight: bolder;
-        color: white;
-        background: rgb(0, 0, 0);
-        background: -moz-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
-        background: -webkit-radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
-        background: radial-gradient( circle, rgba(0, 0, 0, 0.55) 3%, rgba(255, 255, 255, 0) 75%);
-        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
-        /* border: 1px solid red; */
-        padding: 2em 0.25em;
-    }
     .landing-text .text-1 {
-        font-size: 0.75em;
+        font-size: 1.45em;
     }
     .landing-text .text-2 {
-        font-size: 1.2em;
+        font-size: 1.35em;
     }
     .landing-text .text-3 {
-        font-size: 1.05em;
+        font-size: 1.35em;
     }
 }
 

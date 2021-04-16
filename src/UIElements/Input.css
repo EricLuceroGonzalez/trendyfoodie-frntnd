@@ -30,7 +30,7 @@
     border-radius: 12px;
     background-color: inherit;
     padding: 0.5rem 0.35rem;
-    color: var(--color-hover);
+    color: var(--color-pink);
     font-size: 1.33rem;
     font-family: Changa;
     font-weight: 900;
@@ -40,7 +40,7 @@
 .form-control textarea:focus {
     outline: none;
     background: inherit;
-    border: 2px solid var(--color-hover);
+    border: 2px solid var(--color-pink);
     color: var(--color-secondary);
 }
 

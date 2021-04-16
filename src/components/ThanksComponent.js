@@ -33,7 +33,7 @@ const ThanksComnpo = () => {
           overflow: "hidden"
         }}
       > */}
-      <div className="embed-responsive embed-responsive-16by9 col-xl-7 col-lg-8 col-md-10 col-10 mt-2 mr-auto ml-auto">
+      <div className="video-box embed-responsive embed-responsive-16by9 col-xl-7 col-lg-8 col-md-10 col-10 mt-3 mr-auto ml-auto">
         <iframe
         title='Danny Duran Youtube video'
           className="embed-responsive-item"
@@ -43,6 +43,11 @@ const ThanksComnpo = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
+      </div>
+      <div className='ml-auto mr-auto thanks-msg col-12'>
+        <span>Gracias, en estos momentos</span>
+        <br/>
+        <span>te hemos enviado un email</span>
       </div>
 
       <FooterCompo />

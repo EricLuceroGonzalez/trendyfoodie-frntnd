@@ -20,7 +20,7 @@
     width: 7px;
     height: 18px;
     border-radius: 20%;
-    background: var(--color-hover);
+    background: var(--color-pink);
 }
 
 .lds-spinner div:nth-child(1) {
