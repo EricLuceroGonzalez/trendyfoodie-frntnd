@@ -25,7 +25,8 @@
 }
 
 .cover img {
-    max-width: 265px;
+    max-width: 235px;
+    /* margin-top: 90px; */
 }
 
 @media only screen and (max-width: 767px) {
@@ -79,26 +80,26 @@
 }
 
 .landing-text .text-1 {
-    font-size: 2.15em;
+    font-size: 1.95em;
 }
 
 .landing-text .text-2 {
-    font-size: 2.35em;
+    font-size: 2.05em;
 }
 
 .landing-text .text-3 {
-    font-size: 2.45em;
+    font-size: 2.15em;
 }
 
 @media only screen and (max-width: 767px) {
     .landing-text .text-1 {
-        font-size: 1.45em;
+        font-size: 0.98em;
     }
     .landing-text .text-2 {
-        font-size: 1.35em;
+        font-size: 1.11em;
     }
     .landing-text .text-3 {
-        font-size: 1.35em;
+        font-size: 1.15em;
     }
 }
 
