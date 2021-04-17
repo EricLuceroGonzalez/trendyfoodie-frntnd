@@ -94,16 +94,16 @@
         max-width: 165px;
     }
     .landing-text .text-1 {
-        font-size: 0.98em;
+        font-size: 0.90em;
     }
     .landing-text .text-2 {
-        font-size: 1.11em;
+        font-size: 0.98em;
     }
     .landing-text .text-3 {
-        font-size: 1.15em;
+        font-size: 1.0em;
     }
     .text-cover-div {
-        margin-top: 250px;
+        margin-top: 150px;
     }
 }
 

@@ -22,27 +22,26 @@ const Landing = () => {
     <React.Fragment>
       <div className="total-bg">
         {/* <div className="landing-container"> */}
-          <div className="name-brand col-12 mr-auto ml-auto">
-            {!showModal && (
-              <img
-                className="mt-3 fade-in-left"
-                alt="Danny Duran on a bike"
-                src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
-              />
-            )}
-          </div>
-          {/* <div className=" col-12 borderA"></div> */}
-          {/* <div className=" col-12 borderB"></div> */}
-          <div className='d-flex flex-column flex-md-row flex-lg-column text-cover-div'>
-
+        <div className="name-brand col-12 mr-auto ml-auto">
           {!showModal && (
-          <div className="borderC landing-text mt-5 col-12 col-md-6 col-lg-12 fade-in-right">
-            <span className="text-1">Tengo una </span>
-            <span className="text-2">sorpresa para ti</span>
-            <span className="text-3">Suscríbete y descúbrela</span>
-          </div>
+            <img
+              className="mt-3 fade-in-left"
+              alt="Danny Duran on a bike"
+              src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
+            />
           )}
-          <div className="borderA cover mt-5 col-12 col-md-6 col-lg-12">
+        </div>
+        {/* <div className=" col-12 borderA"></div> */}
+        {/* <div className=" col-12 borderB"></div> */}
+        <div className="d-flex flex-column flex-md-row flex-lg-column text-cover-div">
+          {!showModal && (
+            <div className="landing-text mt-5 col-12 col-md-6 col-lg-12 fade-in-right">
+              <span className="text-1">Tengo una </span>
+              <span className="text-2">sorpresa para ti</span>
+              <span className="text-3">Suscríbete y descúbrela</span>
+            </div>
+          )}
+          <div className="cover mt-5 col-12 col-md-6 col-lg-12">
             <img
               className=" fade-in-right"
               alt="Danny Duran and Alkilados making music"
@@ -72,9 +71,8 @@ const Landing = () => {
               Suscríbete
             </Button>
           </div>
-        )}{" "}        
+        )}{" "}
       </div>
-
     </React.Fragment>
   );
 };
