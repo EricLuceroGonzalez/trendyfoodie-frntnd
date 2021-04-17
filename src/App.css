@@ -70,6 +70,14 @@ body {
     border: 1px solid red;
 }
 
+.borderB {
+    border: 2px solid cyan;
+}
+
+.borderC {
+    border: 2px solid violet;
+}
+
 :root {
     --color-primary: black;
     --color-secondary: #ffffff;
