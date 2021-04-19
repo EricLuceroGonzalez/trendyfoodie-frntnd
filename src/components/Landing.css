@@ -76,12 +76,19 @@
     display: block;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 720px) {
     .total-bg {
         /* The file size of this background image is 93% smaller
   to improve page load speed on mobile internet connections */
         background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618549156/danny/imagen_light_hitshd.jpg);
         /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_gimhzd.jpg); */
+        height: 100vh;
+        /* overflow-y: hidden; */
+        /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_02_z2lqsj.jpg); */
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
     .name-brand img {
         /* border: 1px solid red; */
@@ -107,25 +114,6 @@
     }
 }
 
-
-/* @media (orientation: landscape) {
-    .landing-text .text-1 {
-        font-size: 0.98em;
-        display: block;
-    }
-    .landing-text .text-2 {
-        font-size: 1.11em;
-        display: block;
-    }
-    .landing-text .text-3 {
-        font-size: 1.15em;
-        display: block;
-    }
-    .cover img {
-        max-width: 95px;
-    }
-} */
-
 @media only screen and (min-width: 900px) {
     .landing-text .text-1 {
         font-size: 1.98em;
@@ -147,14 +135,16 @@
     }
 }
 
-@media only screen and (min-width: 767px) and(max-width: 900px) {
+@media only screen and (min-width: 730px) and(max-width: 900px) {
     .landing-text .text-1 {
         font-size: 0.98em;
         display: block;
+        color: red;
     }
     .landing-text .text-2 {
         font-size: 1.11em;
         display: block;
+        color: red;
     }
     .landing-text .text-3 {
         font-size: 1.15em;
@@ -162,6 +152,28 @@
     }
     .cover img {
         width: 25px;
+    }
+}
+
+@media (orientation: landscape) {
+    .total-bg {
+        background-color: var(--color-primary);
+        height: 100vw;
+    }
+    .landing-text .text-1 {
+        font-size: 0.88em;
+        display: block;
+    }
+    .landing-text .text-2 {
+        font-size: 0.89em;
+        display: block;
+    }
+    .landing-text .text-3 {
+        font-size: 0.95em;
+        display: block;
+    }
+    .cover img {
+        max-width: 95px;
     }
 }
 

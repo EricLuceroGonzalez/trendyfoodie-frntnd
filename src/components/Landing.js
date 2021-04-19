@@ -23,13 +23,13 @@ const Landing = () => {
       <div className="total-bg">
         {/* <div className="landing-container"> */}
         <div className="name-brand col-12 mr-auto ml-auto">
-          {!showModal && (
+          {/* {!showModal && ( */}
             <img
-              className="mt-3 fade-in-left"
+              className={`mt-3 ${!showModal ? 'fade-in-left' : ''}`}
               alt="Danny Duran on a bike"
               src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
             />
-          )}
+          {/* )} */}
         </div>
         {/* <div className=" col-12 borderA"></div> */}
         {/* <div className=" col-12 borderB"></div> */}
