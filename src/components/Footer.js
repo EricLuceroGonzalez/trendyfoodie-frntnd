@@ -13,7 +13,7 @@ const FooterCompo = () => {
     <div className="footer-box d-flex">
       <div className="col-3"></div>
       <div className="col-2 fade-in-right">
-        <a href="https://www.youtube.com/channel/UCvHLR6Tj2YXTIGQFvUMAIIw">
+        <a href="https://www.instagram.com/dannyduranmusic/">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
       </div>
@@ -24,7 +24,7 @@ const FooterCompo = () => {
         </a>
       </div>
       <div className="col-2 fade-in-bottom">
-        <a href="https://open.spotify.com/artist/5p6qkdDXlxWTxpPW94Dg0X">
+        <a href="https://www.youtube.com/channel/UCvHLR6Tj2YXTIGQFvUMAIIw">
           <FontAwesomeIcon icon={faYoutube} />
         </a>
       </div>
