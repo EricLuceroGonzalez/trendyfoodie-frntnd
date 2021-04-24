@@ -1,68 +1,69 @@
 {
-  "name": "frntd",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
-    "@fortawesome/free-regular-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.6.0",
-    "bootstrap": "^4.5.3",
-    "i": "^0.3.6",
-    "moment": "^2.29.1",
-    "npm": "^7.7.6",
-    "react": "^17.0.1",
-    "react-csv": "^2.0.3",
-    "react-dom": "^17.0.1",
-    "react-phone-number-input": "^3.1.18",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "react-table": "^7.6.3",
-    "react-transition-group": "^4.4.1",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "frntd",
+    "homepage": "http://dannyduranmusic.com/",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-brands-svg-icons": "^5.15.3",
+        "@fortawesome/free-regular-svg-icons": "^5.15.3",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "@testing-library/jest-dom": "^5.11.6",
+        "@testing-library/react": "^11.2.2",
+        "@testing-library/user-event": "^12.6.0",
+        "bootstrap": "^4.5.3",
+        "i": "^0.3.6",
+        "moment": "^2.29.1",
+        "npm": "^7.7.6",
+        "react": "^17.0.1",
+        "react-csv": "^2.0.3",
+        "react-dom": "^17.0.1",
+        "react-phone-number-input": "^3.1.18",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.1",
+        "react-table": "^7.6.3",
+        "react-transition-group": "^4.4.1",
+        "web-vitals": "^0.2.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+    "main": "index.js",
+    "devDependencies": {},
+    "keywords": [
+        "website",
+        "artist",
+        "music",
+        "warner",
+        "danny",
+        "duran",
+        "spotify",
+        "facebook"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {},
-  "keywords": [
-    "website",
-    "artist",
-    "music",
-    "warner",
-    "danny",
-    "duran",
-    "spotify",
-    "facebook"
-  ],
-  "author": "Eric Lucero",
-  "license": "ISC"
+    "author": "Eric Lucero",
+    "license": "ISC"
 }

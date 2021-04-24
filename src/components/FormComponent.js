@@ -105,7 +105,6 @@ const FormCompo = (props) => {
   };
   return (
     <React.Fragment>
-      {isLoading && <LoadingSpinner asOverlay />}
       <Modal
         show={props.showModal}
         closeModal={() => props.openCloseModal()}
