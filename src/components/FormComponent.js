@@ -134,7 +134,7 @@ const FormCompo = (props) => {
           errorText="Introduce un correo válido"
           onInput={inputHandler}
         />
-        <div class="form-check col-8 d-flex">
+        <div class="col-8 d-flex">
           <input
             type="checkbox"
             defaultChecked={true}
