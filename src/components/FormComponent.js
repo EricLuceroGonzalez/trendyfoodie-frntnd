@@ -99,9 +99,8 @@ const FormCompo = (props) => {
         { "Content-Type": "application/json" }
       );
       props.openCloseModal();
-      history.push('/thanks')
-    } catch (err) {
-    }
+      history.push("/thanks");
+    } catch (err) {}
   };
   return (
     <React.Fragment>
@@ -135,6 +134,23 @@ const FormCompo = (props) => {
           errorText="Introduce un correo válido"
           onInput={inputHandler}
         />
+        <div class="form-check col-8 d-flex">
+          <input
+            type="checkbox"
+            defaultChecked={true}
+            // onChange={this.handleChangeChk}
+          />
+          <label
+            style={{
+              color: "whitesmoke",
+              fontFamily: "Arial",
+              fontSize: "0.8em",
+            }}
+          >
+            Sí, acepto las políticas de privacidad de Dannyduranmusic y recibir
+            noticias, contenidos, comunicaciones relacionados a la marca.
+          </label>
+        </div>
       </Modal>
     </React.Fragment>
   );

@@ -80,7 +80,7 @@
     .total-bg {
         /* The file size of this background image is 93% smaller
   to improve page load speed on mobile internet connections */
-        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618549156/danny/imagen_light_hitshd.jpg);
+        /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618549156/danny/imagen_light_hitshd.jpg); */
         /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8592_gimhzd.jpg); */
         height: 100vh;
         /* overflow-y: hidden; */
