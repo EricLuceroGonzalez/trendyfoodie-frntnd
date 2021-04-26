@@ -7,6 +7,7 @@ import "./TableStyle.css";
 import TimeClock from "./TimeClock";
 import LoadingSpinner from "../UIElements/LoadingSpinner";
 import { AuthContext } from "../utils/auth-context";
+import ChartsComponent from "./ChartsComponent";
 
 const TableCompo = () => {
   const auth = useContext(AuthContext);
@@ -17,9 +18,10 @@ const TableCompo = () => {
     { label: "Nombre", key: "name" },
     { label: "Correo", key: "email" },
     { label: "Pais", key: "country" },
-    { label: "Ciudad", key: "city" },
+    { label: "Genero", key: "gender" },
     { label: "Ip", key: "IPv4" },
     { label: "Creado", key: "creationDate" },
+    { label: "Pantalla", key: "windowPixels" },
   ];
 
   const renderCSV = () => {
@@ -45,7 +47,6 @@ const TableCompo = () => {
           `${process.env.REACT_APP_BACKEND_URL}/form/getPeople`
         );
         setData(data.data);
-        // console.log(data.data);
       } catch (err) {}
     };
     getData();
@@ -77,9 +78,14 @@ const TableCompo = () => {
         <td>{item.name}</td>
         <td>{item.email}</td>
         <td>{item.country ? item.country : "----"}</td>
-        <td>{item.city ? item.city : "----"}</td>
+        <td>
+          {item.gender ? (item.gender == "male" ? "Hombre" : "Mujer") : "----"}
+        </td>
         <td>{item.IPv4 ? item.IPv4 : "----"}</td>
         <td>{moment(item.creationDate).format("L")}</td>
+        <td>{moment(item.creationDate).format("LTS")}</td>
+        <td>{item.windowPixels ? item.windowPixels[0] : ""}</td>
+        <td>{item.windowPixels ? item.windowPixels[1] : ""}</td>
       </tr>
     ));
     return allRows;
@@ -90,6 +96,7 @@ const TableCompo = () => {
     <div>
       <TimeClock />
       {isLoading && <LoadingSpinner asOverlay />}
+      <ChartsComponent data={datas}/>
       <table className="theTable table table-bordered mt-2 col-lg-6 col-md-8 col-12 ml-auto mr-auto table-sm mb-5">
         <thead>
           <tr
@@ -103,9 +110,12 @@ const TableCompo = () => {
             <th>Nombre</th>
             <th>Correo</th>
             <th>País</th>
-            <th>Ciudad</th>
+            <th>Sexo</th>
             <th>IP</th>
-            <th>Creado</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>W</th>
+            <th>H</th>
           </tr>
         </thead>
         <tbody>{renderRoll()}</tbody>

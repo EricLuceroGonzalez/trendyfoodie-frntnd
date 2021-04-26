@@ -2,7 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faSpotify,
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";

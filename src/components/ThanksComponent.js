@@ -41,7 +41,7 @@ const ThanksComnpo = () => {
           // src='https://res.cloudinary.com/dcvnw6hvt/video/upload/v1617593411/danny/untitled_ixqzvf.mp4'
           // src="https://www.youtube.com/embed/jSxPRIBMaKk?autoplay=1"
           frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
       </div>

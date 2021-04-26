@@ -22,17 +22,19 @@ function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/thanks" component={ThanksComponent} />
-        <Route path="/privateDataAccess" component={TableCompo} />
+        <Route exact path="/privateDataAccess" component={TableCompo} />
         <Route exact path="/login" component={Auth} />
+        <Route path="/" component={Landing} />
       </Switch>
     );
-  } else {
+  } else {   
     routes = (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/thanks" component={ThanksComponent} />
         <Route exact path="/login" component={Auth} />
-        <Redirect to="/"></Redirect>
+        {/* <Redirect to="/"></Redirect> */}
+        <Route component={Landing} />
       </Switch>
     );
   }

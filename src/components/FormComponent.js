@@ -18,6 +18,9 @@ const FormCompo = (props) => {
   const [hasValue, setHasValue] = useState(false);
   const [ipValue, setIpValue] = useState("");
   const [size, setSize] = useState([0, 0]);
+  const [gender, setGender] = useState("");
+  const [acceptData, setAcceptData] = useState(true);
+  const [animate, setAnimate] = useState(false);
   // Initialize state with form-hook
   const [formState, inputHandler] = useForm(
     {
@@ -37,10 +40,20 @@ const FormCompo = (props) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  // useEffect(() => {
-  //   console.log(`props.isOpen: ${props.isOpen}`);
-  //   console.log(`formState.isValid: ${formState.isValid}`);
-  // }, [props, formState]);
+  useEffect(() => {
+    const getGender = async () => {
+      let gen = await sendRequest(
+        `https://api.genderize.io/?name=${
+          formState.inputs.name.value.split(" ")[0]
+        }`
+      );
+      setGender(gen.gender);
+    };
+
+    if (formState.inputs.name.value) {
+      getGender();
+    }
+  }, [formState.inputs.name.value, sendRequest]);
 
   useEffect(() => {
     // get IP
@@ -52,27 +65,12 @@ const FormCompo = (props) => {
         setIpValue(ipValues);
         setHasValue(true);
       } catch (err) {
-        // console.log(err);
+        console.log(err);
       }
     };
-    // To call backend
-    // const callVisit = async () => {
-    //   try {
-    //     await sendRequest(
-    //       `${process.env.REACT_APP_BACKEND_URL}/visit/visitAdd`,
-    //       "POST",
-    //       JSON.stringify({ ipValue }),
-    //       { "Content-Type": "application/json" }
-    //     );
-    //   } catch (err) {
-    //   }
-    // };
 
     if (!hasValue) {
       getIPAddress();
-    }
-    if (hasValue && props.isOpen === "opened") {
-      // callVisit();
     }
 
     return () => {
@@ -84,6 +82,7 @@ const FormCompo = (props) => {
     const data = {
       name: formState.inputs.name.value,
       email: formState.inputs.email.value,
+      gender: gender,
       IPv4: ipValue.IPv4,
       country: ipValue.country_name,
       city: ipValue.city,
@@ -91,31 +90,48 @@ const FormCompo = (props) => {
       windowW: size[0],
       windowH: size[1],
     };
-    try {
-      await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}/form/send`,
-        "POST",
-        JSON.stringify(data),
-        { "Content-Type": "application/json" }
-      );
-      props.openCloseModal();
-      history.push("/thanks");
-    } catch (err) {}
+    if (formState.isValid && acceptData) {
+      setAnimate(!animate);
+      console.log(data);
+
+      try {
+        console.log("cool send");
+
+        await sendRequest(
+          `${process.env.REACT_APP_BACKEND_URL}/form/send`,
+          "POST",
+          JSON.stringify(data),
+          { "Content-Type": "application/json" }
+        );
+        props.openCloseModal();
+        history.push("/thanks");
+      } catch (err) {}
+    }
+  };
+
+  const AcceptData = () => {
+    setAcceptData(!acceptData);
   };
   return (
     <React.Fragment>
+      {/* {isLoading && <LoadingSpinner asOverlay />} */}
       <Modal
         show={props.showModal}
         closeModal={() => props.openCloseModal()}
         onClear={props.errorHandler}
         // header={"DANNY DURAN"}
         footer={
-          <Button disabled={!formState.isValid} onClick={() => sendData()}>
+          <Button
+            animate={animate ? "roll-out-blurred-right" : ""}
+            disabled={!formState.isValid || !acceptData}
+            onClick={() => sendData()}
+          >
             {" "}
             Enviar{" "}
           </Button>
         }
       >
+        {animate && <div className="loading-form">Loading</div>}
         <Input
           element="input"
           id="name"
@@ -134,17 +150,20 @@ const FormCompo = (props) => {
           errorText="Introduce un correo válido"
           onInput={inputHandler}
         />
-        <div class="col-8 d-flex">
+        <div className="col-12 col-md-6 col-lg-10 d-flex">
           <input
             type="checkbox"
             defaultChecked={true}
-            // onChange={this.handleChangeChk}
+            onChange={() => {
+              AcceptData();
+            }}
           />
           <label
             style={{
+              marginLeft: "6px",
               color: "whitesmoke",
               fontFamily: "Arial",
-              fontSize: "0.8em",
+              fontSize: "0.5em",
             }}
           >
             Sí, acepto las políticas de privacidad de Dannyduranmusic y recibir
