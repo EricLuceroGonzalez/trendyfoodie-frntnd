@@ -10,7 +10,6 @@ import {
 import Button from "../UIElements/Button";
 import { useHttpClient } from "../hooks/http-hook";
 import { useHistory } from "react-router-dom";
-import LoadingSpinner from "../UIElements/LoadingSpinner";
 
 const FormCompo = (props) => {
   const history = useHistory();
@@ -65,7 +64,7 @@ const FormCompo = (props) => {
         setIpValue(ipValues);
         setHasValue(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -74,7 +73,8 @@ const FormCompo = (props) => {
     }
 
     return () => {
-      // cleanup
+      setHasValue(false)
+      
     };
   }, [hasValue, props.isOpen, ipValue, sendRequest]);
 

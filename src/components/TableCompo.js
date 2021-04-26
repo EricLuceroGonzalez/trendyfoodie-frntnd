@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import moment from "moment";
-import { useTable } from "react-table";
 import { CSVLink } from "react-csv";
 import { useHttpClient } from "../hooks/http-hook";
 import "./TableStyle.css";
@@ -47,13 +46,14 @@ const TableCompo = () => {
           `${process.env.REACT_APP_BACKEND_URL}/form/getPeople`
         );
         setData(data.data);
+        
       } catch (err) {}
     };
     getData();
     //   return () => {
     //   cleanup
     //   }
-  }, []);
+  }, [sendRequest]);
   const renderRoll = () => {
     // if (datas.length !== 0) {
     let allRows;
@@ -79,7 +79,7 @@ const TableCompo = () => {
         <td>{item.email}</td>
         <td>{item.country ? item.country : "----"}</td>
         <td>
-          {item.gender ? (item.gender == "male" ? "Hombre" : "Mujer") : "----"}
+          {item.gender ? (item.gender === "male" ? "Hombre" : "Mujer") : "----"}
         </td>
         <td>{item.IPv4 ? item.IPv4 : "----"}</td>
         <td>{moment(item.creationDate).format("L")}</td>

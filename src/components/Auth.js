@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 
 import { AuthContext } from "../utils/auth-context";
 import { useHttpClient } from "../hooks/http-hook";
@@ -20,14 +20,14 @@ import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 const Auth = () => {
   const auth = useContext(AuthContext);
   // LOGIN or SIGNUP state mode
-  const [isLoginMode, setIsLoginMode] = useState(true);
-  const [loginBtnDisabled, setLoginBtnDisabled] = useState(true);
-  const [cedulaIsValid, setCedulaIsValid] = useState(false);
+  // const [isLoginMode, setIsLoginMode] = useState(true);
+  // const [loginBtnDisabled, setLoginBtnDisabled] = useState(true);
+  // const [cedulaIsValid, setCedulaIsValid] = useState(false);
   // is Loading is managed by hook
-  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const { isLoading, sendRequest } = useHttpClient();
   const history = useHistory();
   // Initialize state with form-hook
-  const [formState, inputHandler, setFormData] = useForm(
+  const [formState, inputHandler] = useForm(
     {
       name: { value: "", isValid: false },
       password: { value: "", isValid: false },
@@ -37,8 +37,7 @@ const Auth = () => {
 
   const authSubmitHandler = async (event) => {
     event.preventDefault();
-    console.log(formState.inputs.name.value);
-    
+   
       try {
         const responseData = await sendRequest(
           process.env.REACT_APP_BACKEND_URL + "/user/loginUser",
@@ -49,16 +48,15 @@ const Auth = () => {
           }),
           { "Content-Type": "application/json" }
         );
-        console.log(responseData);
         await auth.login(responseData.name, responseData.userId, responseData.token);
         history.push("/privateDataAccess");
       } catch (err) {}
     
 }
 
-  const errorHandler = () => {
-    clearError();
-  };
+  // const errorHandler = () => {
+  //   clearError();
+  // };
   return (
     <React.Fragment>
       {/* <ErrorModal error={error} onClear={errorHandler} /> */}

@@ -12,16 +12,21 @@ const ChartsComponent = (props) => {
   useEffect(() => {
     if (props.data) {
       let genders;
-      let thisCountry;
+      let thisCountry = [];
       let allViewports;
       let weekDays;
       let hoursAday;
       genders = props.data.map((item, k) => {
-        // console.log(item.gender);
         return item.gender;
       });
-      thisCountry = props.data.map((item, k) => {
-        return item.country;
+      props.data.map((item, k) => {
+        if (!item.country) {
+          thisCountry.push("Undefined");
+        } else {
+          thisCountry.push(item.country);
+        }
+
+        // return item.country;
       });
       allViewports = props.data.map((item, k) => {
         return (
@@ -45,7 +50,6 @@ const ChartsComponent = (props) => {
           mujeres: countFreq(genders, "female"),
         },
       }));
-
       setCountries(foo(thisCountry));
       setViewports(foo(allViewports));
       setDays(foo(weekDays));

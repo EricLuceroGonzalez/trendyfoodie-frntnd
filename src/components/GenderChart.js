@@ -15,7 +15,8 @@ const GenderChart = (props) => {
   useEffect(() => {
     setDataLabels(Object.keys(props.data));
     setDataValues(Object.values(props.data));
-    return () => {};
+    return () => {
+    };
   }, [props.data]);
 
   useEffect(() => {
@@ -70,7 +71,7 @@ const GenderChart = (props) => {
       // setCanvasRef("");
       mychart.destroy();
     };
-  }, [dataValues, dataLabels, props.data]);
+  }, [canvasRef,dataValues, dataLabels, props.data]);
   return (
     <React.Fragment>
       <div className="mr-auto ml-auto">

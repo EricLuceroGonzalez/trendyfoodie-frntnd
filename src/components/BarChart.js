@@ -77,7 +77,6 @@ const BarChart = (props) => {
           },
         },
         maintainAspectRatio: false,
-        responsive: true,
         legend: {
           display: true,
           labels: {
@@ -110,7 +109,7 @@ const BarChart = (props) => {
       mychart.destroy();
     };
     // }, [dataValues, dataLabels]);
-  }, [dataValues, dataLabels, props]);
+  }, [canvasRef,dataValues, dataLabels, props]);
   return (
     <React.Fragment>
       <div style={{ margin: "4em auto" }}>

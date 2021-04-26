@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Landing from "./components/Landing";
-import { Route, Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import LoadingSpinner from "./UIElements/LoadingSpinner";
 import { AuthContext } from "./utils/auth-context";
 import { useAuth } from "./hooks/auth-hook";
