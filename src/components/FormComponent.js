@@ -73,8 +73,7 @@ const FormCompo = (props) => {
     }
 
     return () => {
-      setHasValue(false)
-      
+      setHasValue(false);
     };
   }, [hasValue, props.isOpen, ipValue, sendRequest]);
 
@@ -132,44 +131,58 @@ const FormCompo = (props) => {
         }
       >
         {animate && <div className="loading-form">Loading</div>}
-        <Input
-          element="input"
-          id="name"
-          type="text"
-          label="Nombre"
-          validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(3)]}
-          errorText="Introduce un nombre"
-          onInput={inputHandler}
-        />
-        <Input
-          element="input"
-          id="email"
-          type="text"
-          label="Correo"
-          validators={[VALIDATOR_EMAIL(), VALIDATOR_REQUIRE()]}
-          errorText="Introduce un correo válido"
-          onInput={inputHandler}
-        />
-        <div className="col-12 col-md-6 col-lg-10 d-flex">
-          <input
-            type="checkbox"
-            defaultChecked={true}
-            onChange={() => {
-              AcceptData();
-            }}
-          />
-          <label
-            style={{
-              marginLeft: "6px",
-              color: "whitesmoke",
-              fontFamily: "Arial",
-              fontSize: "0.5em",
-            }}
-          >
-            Sí, acepto las políticas de privacidad de Dannyduranmusic y recibir
-            noticias, contenidos, comunicaciones relacionados a la marca.
-          </label>
-        </div>
+        {animate && (
+          <div className="cover mt-5 col-12 col-md-8 col-lg-12 mr-auto ml-auto">
+            <img
+              className=" fade-in-right"
+              alt="Danny Duran and Alkilados making music"
+              src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618553166/danny/danny-duran-front500x500_psnfxd.jpg"
+            />
+          </div>
+        )}
+        {!animate && (
+          <React.Fragment>
+            <Input
+              element="input"
+              id="name"
+              type="text"
+              label="Nombre"
+              validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(3)]}
+              errorText="Introduce un nombre"
+              onInput={inputHandler}
+            />
+            <Input
+              element="input"
+              id="email"
+              type="text"
+              label="Correo"
+              validators={[VALIDATOR_EMAIL(), VALIDATOR_REQUIRE()]}
+              errorText="Introduce un correo válido"
+              onInput={inputHandler}
+            />
+            <div className="col-12 col-md-6 col-lg-10 d-flex">
+              <input
+                type="checkbox"
+                defaultChecked={true}
+                onChange={() => {
+                  AcceptData();
+                }}
+              />
+              <label
+                style={{
+                  marginLeft: "6px",
+                  color: "whitesmoke",
+                  fontFamily: "Arial",
+                  fontSize: "0.5em",
+                }}
+              >
+                Sí, acepto las políticas de privacidad de Dannyduranmusic y
+                recibir noticias, contenidos, comunicaciones relacionados a la
+                marca.
+              </label>
+            </div>
+          </React.Fragment>
+        )}
       </Modal>
     </React.Fragment>
   );

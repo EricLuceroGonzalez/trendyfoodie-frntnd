@@ -27,17 +27,16 @@ const GenderChart = (props) => {
 
       options: {
         maintainAspectRatio: false,
-        responsive: true,
-        legend: {
-          display: true,
-          position: "top",
-        },
-       
+        responsive: true,      
         animation: {
           animateScale: true,
           animateRotate: true,
         },
         plugins: {
+          legend: {
+            display: true,
+            position: "top",
+          },  
           title: {
             display: true,
             text: "Genero",
@@ -60,7 +59,7 @@ const GenderChart = (props) => {
             labels: dataLabels,
             label: "my label",
             backgroundColor: colors,
-            hoverBackgroundColor: ["#E26D5A"],
+            hoverBackgroundColor: ["#42C748"],
             hoverOffset: 10,
           },
         ],
@@ -74,7 +73,7 @@ const GenderChart = (props) => {
   }, [canvasRef,dataValues, dataLabels, props.data]);
   return (
     <React.Fragment>
-      <div className="mr-auto ml-auto">
+      <div className="col-6 mr-auto ml-auto">
         <canvas ref={canvasRef} width="250" height="250"></canvas>
       </div>
     </React.Fragment>

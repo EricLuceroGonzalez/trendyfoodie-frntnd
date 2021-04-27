@@ -26,7 +26,7 @@
 
 .cover img {
     max-width: 125px;
-    /* margin-top: 90px; */
+    /* margin-top: 10px; */
 }
 
 
@@ -72,7 +72,7 @@
 }
 
 .landing-text .text-3 {
-    font-size: 1.40em;
+    font-size: 1.4em;
     display: block;
 }
 
@@ -99,15 +99,16 @@
     }
     .cover img {
         max-width: 165px;
+        text-align: center;
     }
     .landing-text .text-1 {
-        font-size: 0.90em;
+        font-size: 0.9em;
     }
     .landing-text .text-2 {
         font-size: 0.98em;
     }
     .landing-text .text-3 {
-        font-size: 1.0em;
+        font-size: 1em;
     }
     .text-cover-div {
         margin-top: 150px;
@@ -129,6 +130,7 @@
     }
     .cover img {
         min-width: 165px;
+        text-align: center;
     }
     .text-cover-div {
         margin-top: 300px;
@@ -152,6 +154,7 @@
     }
     .cover img {
         width: 25px;
+        text-align: center;
     }
 }
 

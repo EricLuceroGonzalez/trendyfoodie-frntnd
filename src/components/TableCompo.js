@@ -93,7 +93,7 @@ const TableCompo = () => {
   };
 
   return (
-    <div>
+    <div style={{backgroundColor: 'whitesmoke', padding: '2rem 0'}}>
       <TimeClock />
       {isLoading && <LoadingSpinner asOverlay />}
       <ChartsComponent data={datas}/>

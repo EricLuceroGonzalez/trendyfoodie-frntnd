@@ -231,3 +231,12 @@
         text-shadow: .25em 0 0 var(--color-pink), .5em 0 0 var(--color-pink);
     }
 }
+
+.cover {
+    text-align: center;
+}
+
+
+/* .cover img {
+    max-width: 325px;
+} */

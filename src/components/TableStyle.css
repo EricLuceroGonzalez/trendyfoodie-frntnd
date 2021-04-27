@@ -53,3 +53,10 @@
     text-decoration: none;
     color: darkred;
 }
+
+.totalN {
+    text-align: center;
+    color: #42c748;
+    font-size: 3rem;
+    font-family: Changa;
+}

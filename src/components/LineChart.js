@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
-// import Chart from "chart.js";
 import {
   Chart,
   Title,
-  BarController,
-  BarElement,
-  LinearScale,
-  CategoryScale,
+  LineController,
+  PointElement,
+  LineElement,
 } from "chart.js";
-Chart.register(Title, BarController, BarElement, LinearScale, CategoryScale);
+Chart.register(Title, LineController, PointElement, LineElement);
 
 // import {Chart} from 'chart.js';
 
-const BarChart = (props) => {
+const LineChart = (props) => {
   const [dataValues, setDataValues] = useState();
   const [dataLabels, setDataLabels] = useState();
   const [canvasRef, setCanvasRef] = useState(React.createRef());
@@ -20,10 +18,6 @@ const BarChart = (props) => {
   // var ctx = document.getElementById('myChart').getContext('2d'); // 2d context
 
   useEffect(() => {
-    // console.log("\n_____________  props");
-    // console.log(props.data);
-    // console.log(props.data[0]);
-    // console.log(props.data[1]);
     setDataLabels(props.data[0]);
     setDataValues(props.data[1]);
     // setDataLabels(Object.keys(props.data[0]));
@@ -34,20 +28,30 @@ const BarChart = (props) => {
   useEffect(() => {
     var colors = ["#42C748", "#509453", "#47D64E", "#169C1C", "#679C69"];
     var mychart = new Chart(canvasRef.current, {
-      type: "bar",
+      type: "line",
       data: {
         datasets: [
           {
+            //   label: 'ho',
+              label:dataLabels,
             data: dataValues,
-            backgroundColor: colors,
-            hoverOffset: 9,
-            hoverBackgroundColor: ["#A3E319"],
+            borderColor: colors,
+            tension: 0.1,
+            hoverBackgroundColor: ["#3E1EA8"],
           },
         ],
         labels: dataLabels,
       },
       options: {
         responsive: true,
+        // layout:{
+        //     padding: {
+        //         top: 25,
+        //         left: 15,
+        //         right: 15,
+        //         bottom: 25
+        //     }
+        //   },
         scales: {
           y: {
             beginAtZero: true,
@@ -56,9 +60,6 @@ const BarChart = (props) => {
         maintainAspectRatio: false,
         legend: {
           display: true,
-          labels: {
-            color: "rgb(255,1, 1)",
-          },
         },
         plugins: {
           title: {
@@ -71,10 +72,7 @@ const BarChart = (props) => {
           labels: {
             render: "percentage",
           },
-        },
-        animation: {
-          animateScale: true,
-          animateRotate: true,
+          
         },
       },
     });
@@ -96,4 +94,4 @@ const BarChart = (props) => {
   );
 };
 
-export default BarChart;
+export default LineChart;
