@@ -47,12 +47,17 @@ const BarChart = (props) => {
         labels: dataLabels,
       },
       options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
+        tooltips: {
+          callbacks: {
+            backgroundColor: "red",
+            titleFontSize: 16,
+            titleFontColor: "#0066ff",
+            bodyFontColor: "#000",
+            bodyFontSize: 14,
+            displayColors: false,
           },
         },
+        responsive: true,
         maintainAspectRatio: false,
         legend: {
           display: true,
@@ -60,7 +65,7 @@ const BarChart = (props) => {
             color: "rgb(255,1, 1)",
           },
         },
-        plugins: {
+        plugins: {         
           title: {
             display: true,
             text: props.chartTitle,
@@ -76,6 +81,16 @@ const BarChart = (props) => {
           animateScale: true,
           animateRotate: true,
         },
+        scales: {
+          y: {
+            beginAtZero: true,
+            display: true,
+            title: {
+              display: true,
+              text: props.yLabel ? props.yLabel : ""
+            }
+          }
+        }
       },
     });
 

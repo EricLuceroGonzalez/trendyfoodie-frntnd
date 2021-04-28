@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
 
 const FormCompo = (props) => {
   const history = useHistory();
-  const { isLoading, sendRequest } = useHttpClient();
+  const { sendRequest } = useHttpClient();
   const [hasValue, setHasValue] = useState(false);
   const [ipValue, setIpValue] = useState("");
   const [size, setSize] = useState([0, 0]);

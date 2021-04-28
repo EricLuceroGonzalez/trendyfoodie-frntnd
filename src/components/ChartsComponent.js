@@ -4,7 +4,10 @@ import BarChart from "./BarChart";
 import moment from "moment";
 import LineChart from "./LineChart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUserCheck} from "@fortawesome/free-solid-svg-icons"
+import { faUserCheck, faUserClock } from "@fortawesome/free-solid-svg-icons";
+import "./Charts.css";
+import TimeClock from "./TimeClock";
+
 const ChartsComponent = (props) => {
   const [genderN, setGenderN] = useState({ genre: "" });
   const [countries, setCountries] = useState([]);
@@ -13,21 +16,22 @@ const ChartsComponent = (props) => {
   const [hoursOfDay, setHoursOfDay] = useState([]);
   const [timeSerie, setTimeSerie] = useState([]);
   const [totalN, setTotalN] = useState("");
-
+  const [userDevice, setUserDevice] = useState([]);
+  const [lastOne, setLastOne] = useState("");
   useEffect(() => {
     if (props.data) {
       setTotalN(props.data.length);
-
       let genders;
       let thisCountry = [];
       let allViewports;
       let weekDays;
       let hoursAday;
       let timeline;
-      genders = props.data.map((item, k) => {
+      let userSystem;
+      genders = props.data.map((item) => {
         return item.gender;
       });
-      props.data.map((item, k) => {
+      props.data.map((item) => {
         if (!item.country) {
           thisCountry.push("Undefined");
         } else {
@@ -36,22 +40,24 @@ const ChartsComponent = (props) => {
 
         // return item.country;
       });
-      allViewports = props.data.map((item, k) => {
+      allViewports = props.data.map((item) => {
         return (
-          item.windowPixels[0].toString() +
+          item.device.windowPixels[0].toString() +
           "x" +
-          item.windowPixels[1].toString()
+          item.device.windowPixels[1].toString()
         );
       });
-
-      weekDays = props.data.map((item, k) => {
+      userSystem = props.data.map((item) => {
+        return item.device.oSystem;
+      });
+      weekDays = props.data.map((item) => {
         return moment(item.creationDate).format("dddd");
       });
-      hoursAday = props.data.map((item, k) => {
+      hoursAday = props.data.map((item) => {
         return moment(item.creationDate).format("LT").split(":")[0];
       });
 
-      timeline = props.data.map((item, k) => {
+      timeline = props.data.map((item) => {
         return moment(item.creationDate).format("l").split(":")[0];
       });
 
@@ -67,8 +73,12 @@ const ChartsComponent = (props) => {
       setDays(foo(weekDays));
       setHoursOfDay(foo(hoursAday));
       setTimeSerie(foo(timeline));
+      setUserDevice(foo(userSystem));
     }
-  }, [props]);
+    if (props.data[props.data.length - 1]) {
+      setLastOne(props.data[props.data.length - 1].creationDate);
+    }
+  }, [props.data]);
 
   const foo = (arr) => {
     var a = [],
@@ -98,28 +108,93 @@ const ChartsComponent = (props) => {
     );
     return aCount.get(variable);
   };
-
+  // TODO:Add show/collapse charts and data
+  // TODO: Date selector
+  // TODO: Sort data and percentage and other calcs
   return (
-    <div className='col-12 col-md-6 col-lg-8 ml-auto mr-auto'>
-      <div className="d-flex col-12">
-        <div className="col-4 totalN row align-items-center">
-          <div className='mr-auto ml-auto'>
-            {totalN}{" "}
-            <FontAwesomeIcon icon={faUserCheck} />
+    <div className="col-12 col-md-12 col-lg-12 ml-auto mr-auto">
+      <div className="d-flex flex-column flex-md-row col-12 col-md-12 chart-box mb-5 ml-auto mr-auto">
+        <div className="col-12 col-md-4 totalN">
+          <div className="mr-auto ml-auto userCheck">
+            <FontAwesomeIcon icon={faUserCheck} /> {totalN}
+            <div>
+              <FontAwesomeIcon icon={faUserClock} />{" "}
+              {lastOne ? moment(lastOne).startOf("").fromNow() : ""}
+              <TimeClock />
             </div>
+          </div>
         </div>
         {genderN ? <GenderChart data={genderN.genre} /> : ""}
       </div>
-      <div className="col-12 col-md-10 mr-auto ml-auto">
-        {timeSerie ? <LineChart chartTitle={"Trafico"} data={timeSerie} /> : ""}
-        {countries ? <BarChart chartTitle={"Países"} data={countries} /> : ""}
-        {viewports ? <BarChart chartTitle={"Pantalla"} data={viewports} /> : ""}
-        {days ? <BarChart chartTitle={"Dias"} data={days} /> : ""}
-        {hoursOfDay ? (
-          <BarChart chartTitle={"Hora del dia (0 - 24)"} data={hoursOfDay} />
-        ) : (
-          ""
-        )}
+      <div className="col-12 col-md-12 col-xl-12 mr-auto ml-auto">
+        <div className="d-flex flex-column flex-lg-row col-12">
+          <div className="chart-box col-12 col-lg-6">
+            {timeSerie ? (
+              <LineChart
+                chartTitle={"Trafico"}
+                yLabel={"Visitas"}
+                data={timeSerie}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="chart-box col-12 col-lg-6">
+            {countries ? (
+              <BarChart
+                chartTitle={"Países"}
+                yLabel={"Visitas"}
+                data={countries}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
+        <div className="d-flex flex-column flex-lg-row col-12">
+          <div className="chart-box col-12 col-lg-6">
+            {hoursOfDay ? (
+              <BarChart
+                chartTitle={"Hora del dia (0 - 24)"}
+                yLabel={"Visitas"}
+                data={hoursOfDay}
+              />
+            ) : (
+              ""
+            )}{" "}
+          </div>
+          <div className="chart-box col-12 col-lg-6">
+            {days ? (
+              <BarChart chartTitle={"Dias"} yLabel={"Visitas"} data={days} />
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
+        <div className="d-flex flex-column flex-lg-row col-12">
+          <div className="chart-box col-12 col-lg-6">
+            {userDevice ? (
+              <BarChart
+                chartTitle={"Dispositivo"}
+                yLabel={"Acumulados"}
+                data={userDevice}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="chart-box col-12 col-lg-6">
+            {viewports ? (
+              <BarChart
+                chartTitle={"Pantalla"}
+                yLabel={"Visitas"}
+                data={viewports}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

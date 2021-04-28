@@ -7,6 +7,12 @@ import TimeClock from "./TimeClock";
 import LoadingSpinner from "../UIElements/LoadingSpinner";
 import { AuthContext } from "../utils/auth-context";
 import ChartsComponent from "./ChartsComponent";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faMobile,
+  faMobileAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const TableCompo = () => {
   const auth = useContext(AuthContext);
@@ -15,12 +21,14 @@ const TableCompo = () => {
 
   const headers = [
     { label: "Nombre", key: "name" },
-    { label: "Correo", key: "email" },
-    { label: "Pais", key: "country" },
     { label: "Genero", key: "gender" },
+    { label: "Pais", key: "country" },
+    { label: "Correo", key: "email" },
     { label: "Ip", key: "IPv4" },
     { label: "Creado", key: "creationDate" },
-    { label: "Pantalla", key: "windowPixels" },
+    { label: "Pantalla (W)", key: "device.windowPixels[0]" },
+    { label: "Pantalla (H)", key: "device.windowPixels[1]" },
+    { label: "Pantalla", key: "device.oSystem" },
   ];
 
   const renderCSV = () => {
@@ -46,7 +54,6 @@ const TableCompo = () => {
           `${process.env.REACT_APP_BACKEND_URL}/form/getPeople`
         );
         setData(data.data);
-        
       } catch (err) {}
     };
     getData();
@@ -62,7 +69,6 @@ const TableCompo = () => {
       // console.log('\n\n -------------------------');
       // }
       // console.log(`k = ${k}`)
-      // console.log(item.name)
       <tr
         key={k}
         style={{
@@ -71,7 +77,7 @@ const TableCompo = () => {
           // fontFamily: "monospace",
           fontFamily: "Changa",
           fontWeight: "500",
-          fontSize: "0.75em",
+          fontSize: "0.95em",
         }}
       >
         <td>{k + 1}</td>
@@ -81,11 +87,12 @@ const TableCompo = () => {
         <td>
           {item.gender ? (item.gender === "male" ? "Hombre" : "Mujer") : "----"}
         </td>
-        <td>{item.IPv4 ? item.IPv4 : "----"}</td>
         <td>{moment(item.creationDate).format("L")}</td>
-        <td>{moment(item.creationDate).format("LTS")}</td>
-        <td>{item.windowPixels ? item.windowPixels[0] : ""}</td>
-        <td>{item.windowPixels ? item.windowPixels[1] : ""}</td>
+        <td>{moment(item.creationDate).format("LT")}</td>
+        <td>{item.device.oSystem ? item.device.oSystem : ""}</td>
+        <td>{item.device.windowPixels ? item.device.windowPixels[1] : ""}</td>
+        <td>{item.device.windowPixels ? item.device.windowPixels[1] : ""}</td>
+        <td>{item.IPv4 ? item.IPv4 : "----"}</td>
       </tr>
     ));
     return allRows;
@@ -93,11 +100,20 @@ const TableCompo = () => {
   };
 
   return (
-    <div style={{backgroundColor: 'whitesmoke', padding: '2rem 0'}}>
-      <TimeClock />
+    <div style={{ backgroundColor: "whitesmoke", padding: "2rem 0" }}>
+      <div className="theBrand col-12 mr-auto ml-auto">
+        <img
+          className={`mt-1`}
+          title="artist logo D"
+          alt="Danny Duran logo DD"
+          src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_favicon_liaxn8.png"
+        />
+        {/* )} */}
+      </div>
       {isLoading && <LoadingSpinner asOverlay />}
-      <ChartsComponent data={datas}/>
-      <table className="theTable table table-bordered mt-2 col-lg-6 col-md-8 col-12 ml-auto mr-auto table-sm mb-5">
+
+      <ChartsComponent data={datas} />
+      <table className="theTable table table-bordered table-responsive col-md-12 col-12 mt-5 mb-5 ml-auto mr-auto">
         <thead>
           <tr
             style={{
@@ -106,16 +122,21 @@ const TableCompo = () => {
               fontFamily: "Changa",
             }}
           >
-            <th></th>
+            <th>
+              <FontAwesomeIcon icon={faUser} />
+            </th>
             <th>Nombre</th>
             <th>Correo</th>
             <th>País</th>
             <th>Sexo</th>
-            <th>IP</th>
             <th>Fecha</th>
             <th>Hora</th>
+            <th>
+              <FontAwesomeIcon icon={faMobileAlt} />
+            </th>
             <th>W</th>
             <th>H</th>
+            <th>IP</th>
           </tr>
         </thead>
         <tbody>{renderRoll()}</tbody>

@@ -4,13 +4,14 @@ import {
   faFacebook,
   faInstagram,
   faYoutube,
+  faSpotify,
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.css";
 
 const FooterCompo = () => {
   return (
     <div className="footer-box d-flex">
-      <div className="col-3"></div>
+      <div className="col-2"></div>
       <div className="col-2 fade-in-right">
         <a href="https://www.instagram.com/dannyduranmusic/">
           <FontAwesomeIcon icon={faInstagram} />
@@ -27,7 +28,12 @@ const FooterCompo = () => {
           <FontAwesomeIcon icon={faYoutube} />
         </a>
       </div>
-      <div className="col-3"></div>
+      <div className="col-2 fade-in-right">
+        <a href="https://open.spotify.com/artist/5p6qkdDXlxWTxpPW94Dg0X?si=sPhrKn8rRzuuzuur08dynQ">
+          <FontAwesomeIcon icon={faSpotify} />
+        </a>
+      </div>
+      <div className="col-2"></div>
     </div>
   );
 };

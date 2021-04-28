@@ -18,8 +18,9 @@
     color: white;
     text-align: center;
     text-transform: uppercase;
-    position: absolute;
-    bottom: 65px;
+    margin-top: 2em;
+    /* position: absolute; */
+    /* bottom: 65px; */
     /* font-size: 1.95em; */
 }
 
@@ -45,8 +46,9 @@
         color: white;
         text-align: center;
         text-transform: uppercase;
-        position: absolute;
-        bottom: 65px;
+        margin-top: 2em;
+        /* position: absolute; */
+        /* bottom: 65px; */
         font-size: 1.09em;
     }
     .video-box {
@@ -63,9 +65,9 @@
     .thanks-msg {
         text-align: center;
         text-transform: uppercase;
-        position: absolute;
-        bottom: 65px;
-        font-size: 0.19em;
+        /* position: absolute; */
+        /* bottom: 65px; */
+        font-size: 0.15em;
     }
     .video-box {
         margin-top: 3em;

@@ -33,7 +33,7 @@ const LineChart = (props) => {
         datasets: [
           {
             //   label: 'ho',
-              label:dataLabels,
+            label: 'dataLabels',
             data: dataValues,
             borderColor: colors,
             tension: 0.1,
@@ -44,6 +44,16 @@ const LineChart = (props) => {
       },
       options: {
         responsive: true,
+        tooltips: {
+          callbacks: {
+            backgroundColor: "#FFF",
+            titleFontSize: 16,
+            titleFontColor: "#0066ff",
+            bodyFontColor: "#000",
+            bodyFontSize: 14,
+            displayColors: false,
+          },
+        },
         // layout:{
         //     padding: {
         //         top: 25,
@@ -55,6 +65,11 @@ const LineChart = (props) => {
         scales: {
           y: {
             beginAtZero: true,
+            display: true,
+            title: {
+              display: true,
+              text: props.yLabel ? props.yLabel : "",
+            },
           },
         },
         maintainAspectRatio: false,
@@ -66,13 +81,6 @@ const LineChart = (props) => {
             display: true,
             text: props.chartTitle,
           },
-          datalabels: {
-            color: "red",
-          },
-          labels: {
-            render: "percentage",
-          },
-          
         },
       },
     });

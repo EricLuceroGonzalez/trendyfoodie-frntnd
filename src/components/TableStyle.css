@@ -25,7 +25,7 @@
 
 @media only screen and (max-width: 767px) {
     .theTable {
-        font-size: 0.4rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -52,11 +52,4 @@
     border: 3px solid darkred;
     text-decoration: none;
     color: darkred;
-}
-
-.totalN {
-    text-align: center;
-    color: #42c748;
-    font-size: 3rem;
-    font-family: Changa;
 }
