@@ -7,6 +7,7 @@ import LoadingSpinner from "./UIElements/LoadingSpinner";
 import { AuthContext } from "./utils/auth-context";
 import { useAuth } from "./hooks/auth-hook";
 import Auth from "./components/Auth";
+import MenuComponent from "./components/MenuComponents";
 // import ThanksComponent from "./components/ThanksComponent";
 // import TableCompo from "./components/TableCompo";
 
@@ -31,6 +32,7 @@ function App() {
     routes = (
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/menu" component={MenuComponent} />
         <Route exact path="/thanks" component={ThanksComponent} />
         <Route exact path="/login" component={Auth} />
         {/* <Redirect to="/"></Redirect> */}

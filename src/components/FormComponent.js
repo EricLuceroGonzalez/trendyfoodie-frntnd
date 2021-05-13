@@ -51,11 +51,13 @@ const FormCompo = (props) => {
 
     if (formState.inputs.name.value) {
       getGender();
+      return () => {};
     }
   }, [formState.inputs.name.value, sendRequest]);
 
   useEffect(() => {
     // get IP
+    
     const getIPAddress = async () => {
       try {
         let ipValues = await sendRequest(
@@ -64,7 +66,7 @@ const FormCompo = (props) => {
         setIpValue(ipValues);
         setHasValue(true);
       } catch (err) {
-        // console.log(err);
+        console.log(err);
       }
     };
 
@@ -73,7 +75,7 @@ const FormCompo = (props) => {
     }
 
     return () => {
-      setHasValue(false);
+      // setHasValue(false);
     };
   }, [hasValue, props.isOpen, ipValue, sendRequest]);
 
@@ -93,18 +95,16 @@ const FormCompo = (props) => {
       setAnimate(!animate);
       console.log(data);
 
-      try {
-        console.log("cool send");
-
-        await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/form/send`,
-          "POST",
-          JSON.stringify(data),
-          { "Content-Type": "application/json" }
-        );
-        props.openCloseModal();
-        history.push("/thanks");
-      } catch (err) {}
+      // try {
+      //   await sendRequest(
+      //     `${process.env.REACT_APP_BACKEND_URL}/form/send`,
+      //     "POST",
+      //     JSON.stringify(data),
+      //     { "Content-Type": "application/json" }
+      //   );
+      //   props.openCloseModal();
+      //   history.push("/thanks");
+      // } catch (err) {}
     }
   };
 
@@ -130,14 +130,16 @@ const FormCompo = (props) => {
           </Button>
         }
       >
-        {animate && <div className="loading-form">Loading</div>}
         {animate && (
-          <div className="cover mt-5 col-12 col-md-8 col-lg-12 mr-auto ml-auto">
-            <img
-              className=" fade-in-right"
-              alt="Danny Duran and Alkilados making music"
-              src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618553166/danny/danny-duran-front500x500_psnfxd.jpg"
-            />
+          <div className="loading-form">
+            {" "}
+            <span role="img" aria-label="tiger emoji">
+              🍕{" "}
+            </span>
+            Loading
+            <span role="img" aria-label="tiger emoji">
+              🍕{" "}
+            </span>
           </div>
         )}
         {!animate && (
@@ -176,9 +178,8 @@ const FormCompo = (props) => {
                   fontSize: "0.5em",
                 }}
               >
-                Sí, acepto las políticas de privacidad de Dannyduranmusic y
-                recibir noticias, contenidos, comunicaciones relacionados a la
-                marca.
+                Sí, acepto las políticas de privacidad de TargetFoodie y recibir
+                noticias, contenidos, comunicaciones relacionados a la marca.
               </label>
             </div>
           </React.Fragment>

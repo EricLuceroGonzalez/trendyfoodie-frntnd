@@ -23,7 +23,7 @@ body {
     /* width: 100vw; */
     display: flex;
     flex-direction: column;
-    font-family: "Train One";
+    font-family: "Changa";
 }
 
 .content {
@@ -79,14 +79,11 @@ body {
 }
 
 :root {
-    --color-primary: black;
-    --color-secondary: #ffffff;
+    --color-primary: #D95D39;
+    --color-secondary: #F0A202;
+    --color-third: #0E1428;
     --color-white: #ffffff;
-    /* --color-text: ; */
-    --color-pink: #ff05c9;
-    --color-login: #acacac;
-    --color-red: #eb3947;
-    --neon-text-color: #f40;
+    --neon-text-color: #7B9E89;
     /* --color-blue: #0487d9; */
 }
 
@@ -106,9 +103,10 @@ body {
     font-family: Staatliches-Regular;
     src: url(./assets/Staatliches-Regular.ttf);
 }
+*/
 
 @font-face {
     font-family: Changa;
     src: local("Changa"), url(./assets/Changa.ttf) format(truetype);
     font-weight: normal;
-} */
+}

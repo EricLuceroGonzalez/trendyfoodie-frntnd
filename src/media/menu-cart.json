@@ -1,0 +1,60 @@
+{
+    "pizza": [{
+            "name": "Margherita",
+            "price": "$12.50",
+            "about": "Fresh tomatoes, fresh mozzarella, fresh basil"
+        },
+        {
+            "name": "Formaggio",
+            "price": "$15.50",
+            "about": "Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)"
+        },
+        {
+            "name": "Chicken",
+            "price": "$17.00",
+            "about": "Fresh tomatoes, mozzarella, chicken, onions"
+        },
+        {
+            "name": "Pineapple'o'clock",
+            "price": "$16.50",
+            "about": "Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil"
+        },
+        {
+            "name": "Meat Town Hot!",
+            "price": "$20.00",
+            "about": "Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken"
+        }
+    ],
+    "pasta": [{
+            "name": "Lasagna Popular",
+            "price": "$13.50",
+            "about": "Special sauce, mozzarella, parmesan, ground beef"
+        },
+        {
+            "name": "Ravioli",
+            "price": "$14.50",
+            "about": "Ravioli filled with cheese"
+        },
+        {
+            "name": "Spaghetti Classica",
+            "price": "$11.50",
+            "about": "Fresh tomatoes, onions, ground beef"
+        }
+    ],
+    "starters": [{
+            "name": "Today's Soup",
+            "price": "$3.50",
+            "about": "Ask the waiter"
+        },
+        {
+            "name": "Bruschetta",
+            "price": "$5.50",
+            "about": "Bread with pesto, tomatoes, onion, garlic"
+        },
+        {
+            "name": "Garlic bread",
+            "price": "$9.50",
+            "about": "Grilled ciabatta, garlic butter, onions"
+        }
+    ]
+}

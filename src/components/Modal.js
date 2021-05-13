@@ -8,17 +8,17 @@ import "./Modal.css";
 // Two components on this file (for internal use):
 const ModalOverlay = (props) => {
   const content = (
-    <div className={`text-focus-in mymodal ${props.className}`} style={props.style}>
+    <div
+      className={`text-focus-in mymodal ${props.className}`}
+      style={props.style}
+    >
       <header
         className={`modal__header ${props.headerClass} d-flex justify-content-between`}
       >
         <div>
-          <img
-            style={{ maxWidth: "170px" }}
-            alt='Danny Duran logo'
-            className="mt-3 image-model"
-            src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
-          />
+          <span role="img" aria-label="tiger emoji">
+            🍕{" "}PIZZA TIME
+          </span>
         </div>
         <div
           className="modal__closer"
