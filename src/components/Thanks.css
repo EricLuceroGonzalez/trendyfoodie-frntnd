@@ -2,11 +2,12 @@
     background-color: var(--color-primary);
     height: 100vh;
     overflow: hidden;
-    background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8633_01_hwgoch.jpg);
+    background-image: url('../media/pizza.png');
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: 3em;
+    background-color: var(--color-third);
 }
 
 .pink-text {
@@ -15,13 +16,14 @@
 }
 
 .thanks-msg {
-    color: white;
+    color: var(--color-primary);
+    background-color: var(--color-third);
     text-align: center;
     text-transform: uppercase;
     margin-top: 2em;
     /* position: absolute; */
     /* bottom: 65px; */
-    /* font-size: 1.95em; */
+    font-size: 1.95em;
 }
 
 .video-box {
@@ -32,7 +34,7 @@
     .thanks-bg {
         /* The file size of this background image is 93% smaller
   to improve page load speed on mobile internet connections */
-        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1618549432/danny/imagen_heavy_arjlvu.jpg);
+        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1620937383/TargetJunkie/5_cfuwld.png);
         /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8633_01_hwgoch.jpg); */
     }
     .name-brand img {

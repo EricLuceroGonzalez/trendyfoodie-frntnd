@@ -95,16 +95,16 @@ const FormCompo = (props) => {
       setAnimate(!animate);
       console.log(data);
 
-      // try {
-      //   await sendRequest(
-      //     `${process.env.REACT_APP_BACKEND_URL}/form/send`,
-      //     "POST",
-      //     JSON.stringify(data),
-      //     { "Content-Type": "application/json" }
-      //   );
-      //   props.openCloseModal();
-      //   history.push("/thanks");
-      // } catch (err) {}
+      try {
+        await sendRequest(
+          `${process.env.REACT_APP_BACKEND_URL}/form/send`,
+          "POST",
+          JSON.stringify(data),
+          { "Content-Type": "application/json" }
+        );
+        props.openCloseModal();
+        history.push("/thanks");
+      } catch (err) {}
     }
   };
 

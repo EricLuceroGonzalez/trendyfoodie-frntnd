@@ -8,12 +8,7 @@ const ThanksComnpo = () => {
   return (
     <div className="thanks-bg content">
       <div className="name-brand col-12 mr-auto ml-auto fade-in-left">
-        <img
-          className="mt-2"
-          alt="Danny Duran on a bike"
-          src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_logo_iv6s5b.png"
-        />
-      </div>
+             </div>
       {/* <div className="video-box mr-auto ml-auto col-12 col-lg-4 col-md-12">
         <iframe
           width="320"
@@ -36,17 +31,7 @@ const ThanksComnpo = () => {
         }}
       > */}
       <div className="embed-responsive embed-responsive-16by9 col-xl-7 col-lg-8 col-md-6 col-10 mt-5 mr-auto ml-auto">
-        <iframe
-          className="embed-responsive-item video-box"
-          title="Danny Duran - Gracias"
-          src="https://res.cloudinary.com/dcvnw6hvt/video/upload/v1617593411/danny/untitled_ixqzvf.mp4"
-          // src="/media_assets/untitled_ixqzvf.mp4"
-          importance="high"
-          allow="autoplay"
-          loading="eager"
-          // allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          // allowFullScreen
-        />
+       
       </div>
 
       <div className="ml-auto mr-auto thanks-msg col-12 mt-5">
