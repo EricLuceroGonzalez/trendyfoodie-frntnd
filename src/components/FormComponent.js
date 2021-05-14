@@ -93,7 +93,7 @@ const FormCompo = (props) => {
     };
     if (formState.isValid && acceptData) {
       setAnimate(!animate);
-      console.log(data);
+      // console.log(data);
 
       try {
         await sendRequest(
