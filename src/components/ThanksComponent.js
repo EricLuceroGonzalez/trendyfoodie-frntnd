@@ -35,27 +35,26 @@ const ThanksComnpo = () => {
       </div>
 
       <div className="ml-auto mr-auto thanks-msg col-12 mt-5">
+      <span className="gracias-text">Gracias</span>
         <span>
-          <span className="pink-text">Gracias</span>, ahora puedes darle click
+          ahora puedes darle click
           al botón de descarga para obtener
         </span>
         <br />
         <span>
-          <span className="pink-text">Misterio</span> ft Alkilados
+          <span className="gracias-text">tu descuento</span> 
         </span>
       </div>
 
       <div className="col-12 mt-5">
         <Link
-          to="/media_assets/Danny_Duran_ft_Alkilados_Misterio.mp3"
-          target="_blank"
-          download="Danny_Duran_ft_Alkilados_Misterio.mp3"
+          to="/menu"
         >
           <Button >
               <span role="img" aria-label="tiger emoji">
                 🐯{" "}
               </span>
-              DESCARGAR
+              MENU
           </Button>
         </Link>
       </div>

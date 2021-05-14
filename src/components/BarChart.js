@@ -32,7 +32,7 @@ const BarChart = (props) => {
   }, [props.data]);
 
   useEffect(() => {
-    var colors = ["#42C748", "#509453", "#47D64E", "#169C1C", "#679C69"];
+    var colors = ["#044389", "#FCFF4B", "#FFAD05", "#7CAFC4", "#5995ED"];
     var mychart = new Chart(canvasRef.current, {
       type: "bar",
       data: {
@@ -41,7 +41,7 @@ const BarChart = (props) => {
             data: dataValues,
             backgroundColor: colors,
             hoverOffset: 9,
-            hoverBackgroundColor: ["#A3E319"],
+            hoverBackgroundColor: ["#826AED"],
           },
         ],
         labels: dataLabels,

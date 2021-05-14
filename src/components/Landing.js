@@ -68,6 +68,12 @@ const Landing = () => {
           </div>
         )}{" "}
       </div>
+      <div className="col-6 toConsola">
+        {" "}
+        <div onClick={() => route.push('privateDataAccess')} size={"small"}>
+          Dashboard
+        </div>
+      </div>
     </React.Fragment>
   );
 };

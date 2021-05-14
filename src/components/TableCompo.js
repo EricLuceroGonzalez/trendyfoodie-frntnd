@@ -4,6 +4,7 @@ import { CSVLink } from "react-csv";
 import { useHttpClient } from "../hooks/http-hook";
 import "./TableStyle.css";
 import TimeClock from "./TimeClock";
+import pizzaImage from '../media/pizza.png'
 import LoadingSpinner from "../UIElements/LoadingSpinner";
 import { AuthContext } from "../utils/auth-context";
 import ChartsComponent from "./ChartsComponent";
@@ -13,8 +14,10 @@ import {
   faMobile,
   faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 const TableCompo = () => {
+  const route = useHistory()
   const auth = useContext(AuthContext);
   const [datas, setData] = useState([]);
   const { isLoading, sendRequest } = useHttpClient();
@@ -90,7 +93,7 @@ const TableCompo = () => {
         <td>{moment(item.creationDate).format("L")}</td>
         <td>{moment(item.creationDate).format("LT")}</td>
         <td>{item.device.oSystem ? item.device.oSystem : ""}</td>
-        <td>{item.device.windowPixels ? item.device.windowPixels[1] : ""}</td>
+        <td>{item.device.windowPixels ? item.device.windowPixels[0] : ""}</td>
         <td>{item.device.windowPixels ? item.device.windowPixels[1] : ""}</td>
         <td>{item.IPv4 ? item.IPv4 : "----"}</td>
       </tr>
@@ -104,16 +107,16 @@ const TableCompo = () => {
       <div className="theBrand col-12 mr-auto ml-auto">
         <img
           className={`mt-1`}
-          title="artist logo D"
-          alt="Danny Duran logo DD"
-          src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617084235/danny/danny_favicon_liaxn8.png"
+          title="The fantastic pizza"
+          alt="The fantastic pizza logo"
+          src={pizzaImage}
         />
         {/* )} */}
       </div>
       {isLoading && <LoadingSpinner asOverlay />}
 
       <ChartsComponent data={datas} />
-      <table className="theTable table table-bordered table-responsive col-md-12 col-12 mt-5 mb-5 ml-auto mr-auto">
+      <table className="table table-bordered table-responsive col-12 col-md-12  mt-5 mb-5 ml-auto mr-auto">
         <thead>
           <tr
             style={{
@@ -144,7 +147,9 @@ const TableCompo = () => {
       {renderCSV()}
       <div className="col-6 downloadBtnRight">
         {" "}
-        <div onClick={() => auth.logout()} size={"small"}>
+        {/* auth.logout() */}
+        <div onClick={() => route.push('/')} size={"small"}>
+        
           Salir
         </div>
       </div>

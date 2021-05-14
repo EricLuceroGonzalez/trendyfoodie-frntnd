@@ -34,6 +34,7 @@ function App() {
         <Route exact path="/" component={Landing} />
         <Route exact path="/menu" component={MenuComponent} />
         <Route exact path="/thanks" component={ThanksComponent} />
+        <Route exact path="/privateDataAccess" component={TableCompo} />
         <Route exact path="/login" component={Auth} />
         {/* <Redirect to="/"></Redirect> */}
         <Route component={Landing} />

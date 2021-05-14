@@ -2,7 +2,7 @@
     background-color: var(--color-primary);
     height: 100vh;
     overflow: hidden;
-    background-image: url('../media/pizza.png');
+    background-image: url("../media/pizza.png");
     background-position: center center;
     background-repeat: repeat;
     background-attachment: fixed;
@@ -10,8 +10,10 @@
     background-color: var(--color-third);
 }
 
-.pink-text {
-    color: var(--color-pink);
+.gracias-text {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    display: block;
     font-weight: bold;
 }
 
@@ -30,33 +32,29 @@
     margin-top: 1em;
 }
 
-@media only screen and (max-width: 767px) {
+
+/* @media only screen and (max-width: 767px) {
     .thanks-bg {
         /* The file size of this background image is 93% smaller
   to improve page load speed on mobile internet connections */
-        background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1620937383/TargetJunkie/5_cfuwld.png);
-        /* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1617080721/danny/IMG_8633_01_hwgoch.jpg); */
-    }
-    .name-brand img {
-        /* border: 1px solid red; */
-        /* position: "absolute"; */
-        /* top: 233px; */
-        max-width: 180px;
-        /* right: 3px; */
-    }
-    .thanks-msg {
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-        margin-top: 2em;
-        /* position: absolute; */
-        /* bottom: 65px; */
-        font-size: 1.09em;
-    }
-    .video-box {
-        margin-top: 3em;
-    }
-}
+
+
+/* background-image: url(https://res.cloudinary.com/dcvnw6hvt/image/upload/v1620937383/TargetJunkie/5_cfuwld.png); */
+
+
+/* } */
+
+
+/* .thanks-msg {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2em;
+    font-size: 1.09em;
+} */
+
+
+/* } */
 
 
 /* .video-box {

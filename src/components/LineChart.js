@@ -26,7 +26,7 @@ const LineChart = (props) => {
   }, [props.data]);
 
   useEffect(() => {
-    var colors = ["#42C748", "#509453", "#47D64E", "#169C1C", "#679C69"];
+    var colors = ["#044389", "#FCFF4B", "#FFAD05", "#7CAFC4", "#5995ED"];
     var mychart = new Chart(canvasRef.current, {
       type: "line",
       data: {
@@ -37,7 +37,7 @@ const LineChart = (props) => {
             data: dataValues,
             borderColor: colors,
             tension: 0.1,
-            hoverBackgroundColor: ["#3E1EA8"],
+            hoverBackgroundColor: ["#5995ED"],
           },
         ],
         labels: dataLabels,
